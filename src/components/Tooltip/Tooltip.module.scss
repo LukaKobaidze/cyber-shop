@@ -1,0 +1,88 @@
+.tooltip {
+  --pos-x: 0; // gets via style prop
+  --pos-y: 0; // gets via style prop
+  --pointer-size: 6px;
+  --pointer-size-half: calc(var(--pointer-size) / 2);
+  font-size: 13px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border-radius: 3px;
+  padding: 3px 7px;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  animation: fadeIn 100ms;
+
+  @media (pointer: coarse) {
+    display: none;
+  }
+
+  &::before {
+    content: '';
+    width: var(--pointer-size);
+    height: var(--pointer-size);
+    position: absolute;
+    border-radius: 2px;
+    background-color: inherit;
+    transform: rotate(45deg);
+    z-index: -1;
+  }
+
+  &--top {
+    transform: translate(calc(var(--pos-x) - 50%), calc(var(--pos-y) - 100%));
+
+    &::before {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%) rotate(45deg);
+    }
+  }
+
+  &--right {
+    transform: translate(var(--pos-x), calc(var(--pos-y) - 50%));
+
+    &::before {
+      left: 0;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  &--bottom {
+    transform: translate(calc(var(--pos-x) - 50%), var(--pos-y));
+
+    &::before {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  &--left {
+    transform: translate(calc(var(--pos-x) - 100%), calc(var(--pos-y) - 50%));
+
+    &::before {
+      right: 0;
+      top: 50%;
+      transform: translate(50%, -50%) rotate(45deg);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 125ms;
+}

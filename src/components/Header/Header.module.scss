@@ -1,0 +1,31 @@
+.header {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: block;
+  margin-right: 63px;
+}
+
+.searchbar {
+  width: 372px;
+}
+
+.lastGroup {
+  display: flex;
+
+  &Item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+
+    &:not(:last-child) {
+      margin-right: 13px;
+    }
+  }
+}
