@@ -1,0 +1,41 @@
+.tabsWrapper {
+  display: flex;
+  margin-left: -1em;
+  margin-bottom: 2em;
+}
+
+.tab {
+  position: relative;
+  padding: 0.4em 1em;
+  color: #8b8b8b;
+  transition: color 125ms;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 1em;
+    right: 1em;
+    height: 2px;
+    transition: background-color 125ms;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: #000;
+  }
+
+  &.active {
+    color: #000;
+
+    &::before {
+      background-color: #000;
+    }
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1em;
+}

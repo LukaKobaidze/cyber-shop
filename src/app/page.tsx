@@ -9,6 +9,7 @@ export default function Home() {
          <HeroMain />
          <HeroGrid />
          <Categories />
+         <Products />
       </>
    );
 }

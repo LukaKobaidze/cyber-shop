@@ -1,11 +1,11 @@
-'use client';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
-import styles from './Tooltip.module.scss';
+"use client";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import styles from "./Tooltip.module.scss";
 
 interface Props {
   text: string | React.ReactNode;
-  position: 'top' | 'right' | 'bottom' | 'left';
+  position: "top" | "right" | "bottom" | "left";
 
   children: React.ReactElement;
 
@@ -55,18 +55,18 @@ export default function Tooltip(props: Props) {
     };
 
     if (!disabled) {
-      element.addEventListener('mouseenter', handleMouseEnter);
-      element.addEventListener('mouseleave', handleMouseLeave);
-      element.addEventListener('focusin', handleFocusIn);
-      element.addEventListener('focusout', handleFocusOut);
+      element.addEventListener("mouseenter", handleMouseEnter);
+      element.addEventListener("mouseleave", handleMouseLeave);
+      element.addEventListener("focusin", handleFocusIn);
+      element.addEventListener("focusout", handleFocusOut);
     }
-
+    
     return () => {
       clearTimeout(delayTimeout);
-      element.removeEventListener('mouseenter', handleMouseEnter);
-      element.removeEventListener('mouseleave', handleMouseLeave);
-      element.removeEventListener('focusin', handleFocusIn);
-      element.removeEventListener('focusout', handleFocusOut);
+      element.removeEventListener("mouseenter", handleMouseEnter);
+      element.removeEventListener("mouseleave", handleMouseLeave);
+      element.removeEventListener("focusin", handleFocusIn);
+      element.removeEventListener("focusout", handleFocusOut);
     };
   }, [position, disabled]);
 
@@ -77,44 +77,45 @@ export default function Tooltip(props: Props) {
       const rect = element.getBoundingClientRect();
 
       switch (position) {
-        case 'top':
+        case "top":
           return {
-            '--pos-x':
+            "--pos-x":
               rect.right -
               element.clientWidth / 2 +
               document.documentElement.scrollLeft +
-              'px',
-            '--pos-y': rect.top - offset + document.documentElement.scrollTop + 'px',
+              "px",
+            "--pos-y":
+              rect.top - offset + document.documentElement.scrollTop + "px",
           };
-        case 'right':
+        case "right":
           return {
-            '--pos-x':
-              rect.right + offset + document.documentElement.scrollLeft + 'px',
-            '--pos-y':
+            "--pos-x":
+              rect.right + offset + document.documentElement.scrollLeft + "px",
+            "--pos-y":
               rect.bottom -
               element.clientHeight / 2 +
               document.documentElement.scrollTop +
-              'px',
+              "px",
           };
-        case 'bottom':
+        case "bottom":
           return {
-            '--pos-x':
+            "--pos-x":
               rect.right -
               element.clientWidth / 2 +
               document.documentElement.scrollLeft +
-              'px',
-            '--pos-y':
-              rect.bottom + offset + document.documentElement.scrollTop + 'px',
+              "px",
+            "--pos-y":
+              rect.bottom + offset + document.documentElement.scrollTop + "px",
           };
-        case 'left':
+        case "left":
           return {
-            '--pos-x':
-              rect.left - offset + document.documentElement.scrollLeft + 'px',
-            '--pos-y':
+            "--pos-x":
+              rect.left - offset + document.documentElement.scrollLeft + "px",
+            "--pos-y":
               rect.bottom -
               element.clientHeight / 2 +
               document.documentElement.scrollTop +
-              'px',
+              "px",
           };
       }
     }
@@ -132,7 +133,7 @@ export default function Tooltip(props: Props) {
         createPortal(
           <div
             className={`${styles.tooltip} ${styles[`tooltip--${position}`]} ${
-              applyHideTransition ? styles.hide : ''
+              applyHideTransition ? styles.hide : ""
             }`}
             style={tooltipStyleVariables}
           >

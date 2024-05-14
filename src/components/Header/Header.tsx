@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import Searchbar from '../Searchbar';
-import Navigation from '../Navigation';
-import Link from 'next/link';
-import { IconCart, IconFavorites, IconUser } from '@/icons';
-import styles from './Header.module.scss';
-import Tooltip from '../Tooltip';
+import Image from "next/image";
+import Searchbar from "../Searchbar";
+import Navigation from "../Navigation";
+import Link from "next/link";
+import { IconCart, IconWishlist, IconUser } from "@/icons";
+import styles from "./Header.module.scss";
+import Tooltip from "../Tooltip";
 
 interface Props {}
 
@@ -18,17 +18,21 @@ export default function Header(props: Props) {
         <Searchbar classNameContainer={styles.searchbar} />
         <Navigation />
         <div className={styles.lastGroup}>
-          <Tooltip position="bottom" text="Favorites" offset={8}>
+          <Tooltip position="bottom" text="Wishlist" offset={8}>
             <Link
-              href="/favorites"
-              aria-label="Favorites"
+              href="/wishlist"
+              aria-label="wishlist"
               className={styles.lastGroupItem}
             >
-              <IconFavorites className={styles.lastGroupItemIcon} />
+              <IconWishlist className={styles.lastGroupItemIcon} />
             </Link>
           </Tooltip>
           <Tooltip position="bottom" text="Cart" offset={8}>
-            <Link href="/cart" aria-label="Cart" className={styles.lastGroupItem}>
+            <Link
+              href="/cart"
+              aria-label="Cart"
+              className={styles.lastGroupItem}
+            >
               <IconCart className={styles.lastGroupItemIcon} />
             </Link>
           </Tooltip>
