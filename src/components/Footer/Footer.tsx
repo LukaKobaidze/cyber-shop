@@ -41,7 +41,6 @@ export default function Footer(props: Props) {
             </ul>
           </div>
         </div>
-        <div>test</div>
         <div className={styles.iconWrapper}>
             <IconTwitter viewBox="0 0 16 16" />
             <IconFacebook viewBox="0 0 16 16" />
