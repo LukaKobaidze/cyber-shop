@@ -1,6 +1,7 @@
 import Paragraph from '@/components/Paragraph'
 import styles from './BigSummerSale.module.scss'
 import Image from 'next/image'
+import Button from '@/components/Button'
 
 interface Props {
   
@@ -11,7 +12,8 @@ export default function BigSummerSale(props: Props) {
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
         <h1>Big Summer <strong>Sale</strong></h1>
-        <Paragraph className='paragraph'>Don't miss out – limited time offer. Shop now for the best deals!</Paragraph>
+        <Paragraph className={styles.paragraph}>Don't miss out – limited time offer. Shop now for the best deals!</Paragraph>
+        <Button className={styles.buyNow}>BUY NOW</Button>
 
         <Image className={styles.notebook} src="/bss-notebook.png" alt="just some stuff" width={358} height={136} />
         <Image className={styles.purpleIpad} src="/bss-purple-ipad.png" alt="just some stuff" width={237} height={192} />
