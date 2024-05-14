@@ -8,3 +8,7 @@ export { default as IconPhone } from './phone.svg';
 export { default as IconSearch } from './search.svg';
 export { default as IconSmartWatch } from './smart-watch.svg';
 export { default as IconUser } from './user.svg';
+export { default as IconFacebook } from './facebook.svg';
+export { default as IconTwitter } from './twitter.svg';
+export { default as IconTiktok } from './tiktok.svg';
+export { default as IconInstagram } from './instagram.svg';
