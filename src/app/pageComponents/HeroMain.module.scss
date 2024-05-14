@@ -1,0 +1,37 @@
+.container {
+  --clr-1: #211c24;
+  --clr-2: #fff;
+  --clr-3: rgba(255, 255, 255, 0.4);
+
+  height: 632px;
+  background-color: var(--clr-1);
+  color: var(--clr-2);
+}
+
+.contentWrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subHeading {
+  display: block;
+  color: var(--clr-3);
+  font-size: 1.5625em;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+}
+
+.heading {
+  font-size: 6em;
+  font-weight: 200;
+  letter-spacing: -3px;
+}
+
+p.paragraph {
+  display: block;
+  font-size: 1.125em;
+  margin-top: 0.6em;
+  margin-bottom: 1.333333333em;
+}

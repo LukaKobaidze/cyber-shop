@@ -1,5 +1,15 @@
 .header {
-  height: 88px;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+}
+
+.contentWrapper {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,6 +22,7 @@
 
 .searchbar {
   width: 372px;
+  height: 63.64%;
 }
 
 .lastGroup {

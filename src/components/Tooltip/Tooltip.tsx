@@ -7,8 +7,9 @@ interface Props {
   text: string | React.ReactNode;
   position: 'top' | 'right' | 'bottom' | 'left';
 
-  /*`offset` - 6 by default */
   children: React.ReactElement;
+
+  /* `offset` - 6 by default */
   offset?: number;
   disabled?: boolean;
 }

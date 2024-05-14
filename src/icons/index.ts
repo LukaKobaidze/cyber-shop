@@ -1,4 +1,10 @@
+export { default as IconCamera } from './camera.svg';
 export { default as IconCart } from './cart.svg';
+export { default as IconComputer } from './computer.svg';
 export { default as IconFavorites } from './favorites.svg';
+export { default as IconGaming } from './gaming.svg';
+export { default as IconHeadphone } from './headphone.svg';
+export { default as IconPhone } from './phone.svg';
 export { default as IconSearch } from './search.svg';
+export { default as IconSmartWatch } from './smart-watch.svg';
 export { default as IconUser } from './user.svg';

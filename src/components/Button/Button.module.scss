@@ -1,0 +1,23 @@
+.button {
+  border-radius: 0.375em;
+  border: 1px solid var(--clr-1);
+  color: var(--clr-1);
+  padding: 1em 3.25em;
+  display: inline-block;
+  transition: background-color 125ms, color 125ms;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--clr-1);
+    color: var(--clr-2);
+  }
+
+  &--1 {
+    --clr-1: #000;
+    --clr-2: #fff;
+  }
+  &--2 {
+    --clr-1: #fff;
+    --clr-2: #000;
+  }
+}
