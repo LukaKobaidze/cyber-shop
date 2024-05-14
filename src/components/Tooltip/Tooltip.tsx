@@ -60,7 +60,7 @@ export default function Tooltip(props: Props) {
       element.addEventListener("focusin", handleFocusIn);
       element.addEventListener("focusout", handleFocusOut);
     }
-    
+
     return () => {
       clearTimeout(delayTimeout);
       element.removeEventListener("mouseenter", handleMouseEnter);
