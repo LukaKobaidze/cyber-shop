@@ -4,6 +4,7 @@ import Categories from "./pageComponents/Categories";
 import Products from "./pageComponents/Products";
 import Brands from "./pageComponents/Brands";
 import Discounts from "./pageComponents/Discounts";
+import BigSummerSale from "./pageComponents/BigSummerSale";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Products />
       <Brands />
       <Discounts />
+      <BigSummerSale />
     </>
   );
 }
