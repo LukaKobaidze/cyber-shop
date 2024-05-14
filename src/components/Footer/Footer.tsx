@@ -2,6 +2,7 @@ import styles from "./Footer.module.scss";
 import Image from 'next/image';
 import Link from "next/link";
 import { IconFacebook, IconTwitter, IconTiktok, IconInstagram} from '@/icons';
+import Tooltip from "../Tooltip";
 
 interface Props {}
 
@@ -42,12 +43,21 @@ export default function Footer(props: Props) {
           </div>
         </div>
         <div className={styles.iconWrapper}>
-            <IconTwitter viewBox="0 0 16 16" />
-            <IconFacebook viewBox="0 0 16 16" />
-            <IconTiktok viewBox="0 0 16 16" />
-            <IconInstagram viewBox="0 0 16 16" />
+          <Tooltip position="top" text="Twitter"><IconTwitter viewBox="0 0 16 16" /></Tooltip>
+          <Tooltip position="top" text="Facebook"><IconFacebook viewBox="0 0 16 16" /></Tooltip>
+          <Tooltip position="top" text="Tiktok"><IconTiktok viewBox="0 0 16 16" /></Tooltip>
+          <Tooltip position="top" text="Instagram"><IconInstagram viewBox="0 0 16 16" /></Tooltip>
           </div>
       </div>
+      <p className={styles.copyright}>
+        © All Right Reserved. Developed by{' '}
+        <a href="https://lukakobaidze.netlify.app/" target="_blank" rel="noreferrer">
+          Luka Kobaidze
+        </a> &{' '} 
+        <a href="https://giorgimachitadze.vercel.app/" target="_blank" rel="noreferrer">
+          Giorgi Machitadze
+        </a>{' '}
+      </p>
     </footer>
   );
 }

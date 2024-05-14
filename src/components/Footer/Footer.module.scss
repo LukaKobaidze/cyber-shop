@@ -1,14 +1,17 @@
 .footer {
   width: 100%;
-  min-height: 504px;
+  min-height: 554px;
   background-color: #000;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   .contentWrapper {
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
+    margin-bottom: 4rem;
   }
   .innerContent{
     display: flex;
@@ -79,6 +82,38 @@
       margin-right: 36px;
       font-size: 16px;
       cursor: pointer;
+    }
+  }
+  .copyright{
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    margin: 0 auto;
+    line-height: 1.5rem;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: auto;
+
+    a {
+      color: #cfcfcf;
+      position: relative;
+    }
+    a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0; /* Start with no width */
+      height: 2px;
+      background-color: #cfcfcf;
+      transition: width 0.7s ease; /* Transition width property */
+    }
+
+    a:hover::after {
+      width: 100%; /* Grow to full width on hover */
     }
   }
 }

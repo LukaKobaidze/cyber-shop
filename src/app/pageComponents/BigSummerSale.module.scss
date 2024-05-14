@@ -1,0 +1,68 @@
+.container{
+  width: 100%;
+  min-height: 448px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #2e2e2e, black);
+  overflow: hidden;
+
+  .contentWrapper{
+    max-width: 1440px;
+    min-height: 448px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  h1{
+    font-size: 72px;
+    font-weight: 200;
+    color: white;
+    margin-top: 50px;
+  }
+  strong{
+    font-weight: 500;
+  }
+  .paragraph{
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  img{
+    position: absolute;
+  }
+  .notebook{
+    left: 5%;
+    top: -2.4rem;
+    transform: rotate(-5deg);
+  }
+  .purpleIpad{
+    left: -1rem;
+    top: 0;
+    z-index: 5;
+  }
+  .blueIpad{
+    left: -4rem;
+    top: 11rem;
+    transform: scaleX(-1);
+  }
+  .watch{
+    right: 0rem;
+    bottom: 0;
+  }
+  .iphone{
+    right: 0;
+    top: 1rem;
+    transform: rotate(-30deg);
+  }
+}
+
+@media(maxwidth: 1080px){
+  
+}
