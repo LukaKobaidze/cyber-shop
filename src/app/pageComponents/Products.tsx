@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./Products.module.scss";
 import { productsData } from "./products.data";
 import ProductCard from "@/components/ProductCard";
+import ProductsGrid from "@/components/ProductsGrid";
 
 const tabs = ["New Arrival", "Bestseller", "Featured Products"] as const;
 
@@ -27,7 +28,7 @@ export default function Products(props: Props) {
         ))}
       </div>
 
-      <div className={styles.products}>
+      <ProductsGrid>
         {productsData.map((product) => (
           <ProductCard
             link={product.link}
@@ -39,7 +40,7 @@ export default function Products(props: Props) {
             onToggleWishlist={() => {}}
           />
         ))}
-      </div>
+      </ProductsGrid>
     </div>
   );
 }

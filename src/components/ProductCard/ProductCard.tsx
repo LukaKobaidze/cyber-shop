@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Button from "../Button";
 import { IconWishlist, IconWishlistFilled } from "@/icons";
@@ -37,7 +39,7 @@ export default function ProductCard(props: Props) {
       </Link>
       <span className={styles.price}>${price}</span>
       <Button className={styles.buyNowButton}>Buy Now</Button>
-      <Tooltip position="bottom" text={tooltipText}>
+      <Tooltip position="top" text={tooltipText}>
         <button
           aria-label={tooltipText}
           className={styles.wishlistButton}

@@ -7,7 +7,7 @@ type ProductType = {
   price: number;
 };
 
-const oneProduct: ProductType = {
+export const oneProduct: ProductType = {
   link: "/product/iphone-14",
   image: "/delete-later/iphone.png",
   title: "Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)",
