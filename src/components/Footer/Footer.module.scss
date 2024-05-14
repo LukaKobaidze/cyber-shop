@@ -13,7 +13,7 @@
     flex-direction: column;
     margin-bottom: 4rem;
   }
-  .innerContent{
+  .innerContent {
     display: flex;
     justify-content: space-between;
   }
@@ -57,7 +57,7 @@
       cursor: pointer;
     }
     li::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 0;
@@ -66,18 +66,17 @@
       background-color: #cfcfcf;
       transition: width 0.7s ease; /* Transition width property */
     }
-  
+
     li:hover::after {
       width: 100%; /* Grow to full width on hover */
     }
   }
-  .iconWrapper{
+  .iconWrapper {
     margin-top: 24px;
     width: fit-content;
     display: flex;
-    
 
-    svg{
+    svg {
       color: white;
       margin-right: 36px;
       font-size: 16px;
@@ -118,66 +117,63 @@
   }
 }
 
-// responsie design
+// responsive design
 
-@media(max-width: 1200px){
-  .footer{
-
-    .contentWrapper{
+@media (max-width: 1200px) {
+  .footer {
+    .contentWrapper {
       padding: 0 1.5rem;
-
     }
   }
 }
 
-@media(max-width: 900px){
-  .footer{
+@media (max-width: 900px) {
+  .footer {
     background-color: #181313;
-    .contentWrapper{
+    .contentWrapper {
       padding: 0 3rem;
     }
-    .innerContent{
+    .innerContent {
       flex-wrap: wrap;
     }
-    .firstContainer{
+    .firstContainer {
       width: 100%;
       margin-bottom: 2rem;
     }
   }
 }
 
-@media(max-width: 501px){
-  .footer{
-
-    .contentWrapper{
+@media (max-width: 501px) {
+  .footer {
+    .contentWrapper {
       padding: 2rem;
     }
-    .innerContent{
+    .innerContent {
       flex-direction: column;
     }
-    .firstContainer{
+    .firstContainer {
       justify-content: center;
       align-items: center;
       text-align: center;
     }
-    .secondContainer{
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .thirdContainer{
+    .secondContainer {
       align-items: center;
       justify-content: center;
       text-align: center;
       margin-bottom: 2rem;
     }
-    .iconWrapper{
+    .thirdContainer {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .iconWrapper {
       margin-left: auto;
       margin-right: auto;
       padding-left: 24px;
 
-      svg{
+      svg {
         width: 24px;
         height: 24px;
         font-size: 24px;

@@ -1,5 +1,5 @@
 import styles from "./Footer.module.scss";
-import Image from 'next/image';
+import Image from "next/image";
 import Link from "next/link";
 import { IconFacebook, IconTwitter, IconTiktok, IconInstagram} from '@/icons';
 import Tooltip from "../Tooltip";
@@ -15,7 +15,10 @@ export default function Footer(props: Props) {
             <Link href="/" className={styles.logo}>
               <Image src="/white-logo.png" alt="" width={65} height={23} />
             </Link>
-            <p>We are a residential interior design firm located in Portland. Our boutique-studio offers more than</p>
+            <p>
+              We are a residential interior design firm located in Portland. Our
+              boutique-studio offers more than
+            </p>
           </div>
           <div className={styles.secondContainer}>
             <h4>Services</h4>
@@ -47,7 +50,7 @@ export default function Footer(props: Props) {
           <Tooltip position="top" text="Facebook"><IconFacebook viewBox="0 0 16 16" /></Tooltip>
           <Tooltip position="top" text="Tiktok"><IconTiktok viewBox="0 0 16 16" /></Tooltip>
           <Tooltip position="top" text="Instagram"><IconInstagram viewBox="0 0 16 16" /></Tooltip>
-          </div>
+         </div>
       </div>
       <p className={styles.copyright}>
         © All Right Reserved. Developed by{' '}
