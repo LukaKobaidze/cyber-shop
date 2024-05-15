@@ -1,5 +1,4 @@
 import HeroMain from "./_components/HeroMain";
-import NewHeroGrid from "./_components/NewHeroGrid";
 import Categories from "./_components/BrowseByCategory";
 import Products from "./_components/Products";
 import Brands from "./_components/Brands";
@@ -11,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       <HeroMain />
-      <NewHeroGrid />
+      <HeroGrid />
       <Categories />
       <Products />
       <Brands />
