@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.arrowLink {
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3125em;
+  color: #000;
+  border: 1px solid transparent;
+  transition: border-color 125ms;
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  &Left {
+    margin-right: 0.5em;
+    & > .arrowIcon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &Right {
+    margin-left: 0.5em;
+  }
+}
+
+.page {
+  background-color: #f6f6f6;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3125em;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: border-color 125ms;
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  &.active {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+.gapDots {
+  color: #737373;
+  font-weight: 500;
+  margin-left: 3px;
+  margin-right: 3px;
+}

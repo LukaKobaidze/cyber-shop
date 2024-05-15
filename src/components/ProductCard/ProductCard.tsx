@@ -14,7 +14,7 @@ interface Props {
   price: number;
   imageSizes: string;
   wishlist: boolean;
-  onToggleWishlist: () => void;
+  onToggleWishlist?: () => void;
 }
 
 export default function ProductCard(props: Props) {
@@ -38,12 +38,12 @@ export default function ProductCard(props: Props) {
         {title}
       </Link>
       <span className={styles.price}>${price}</span>
-      <Button className={styles.buyNowButton}>Buy Now</Button>
+      <Button className={styles.buyNowButton}>Add to Cart</Button>
       <Tooltip position="top" text={tooltipText}>
         <button
           aria-label={tooltipText}
           className={styles.wishlistButton}
-          onClick={() => onToggleWishlist()}
+          onClick={() => onToggleWishlist && onToggleWishlist()}
         >
           {wishlist ? (
             <IconWishlistFilled className={styles.wishlistButtonIcon} />

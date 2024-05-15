@@ -1,0 +1,21 @@
+.dropdownButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: #000;
+  font-weight: 500;
+  border-bottom: 1px solid #b5b5b5;
+  padding: 0.75em 0;
+  margin-bottom: 1em;
+
+  &Icon {
+    transition: transform 125ms;
+  }
+
+  &.active {
+    .dropdownButtonIcon {
+      transform: rotate(180deg);
+    }
+  }
+}

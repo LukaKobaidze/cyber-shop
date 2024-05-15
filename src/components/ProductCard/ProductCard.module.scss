@@ -38,4 +38,10 @@ img.image {
   right: 0.5em;
   color: #909090;
   padding: 0.5em;
+  transition: color 125ms;
+
+  &:hover,
+  &:focus-visible {
+    color: #000;
+  }
 }

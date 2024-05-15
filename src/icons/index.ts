@@ -1,7 +1,9 @@
+export { default as IconArrowExpand } from "./arrow-expand.svg";
 export { default as IconArrow } from "./arrow.svg";
 export { default as IconCamera } from "./camera.svg";
 export { default as IconCart } from "./cart.svg";
 export { default as IconComputer } from "./computer.svg";
+export { default as IconDollarSign } from "./dollar-sign.svg";
 export { default as IconGaming } from "./gaming.svg";
 export { default as IconHeadphone } from "./headphone.svg";
 export { default as IconPhone } from "./phone.svg";
