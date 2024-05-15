@@ -55,8 +55,8 @@ export default function NewHeroGrid(props: Props) {
               <div className={styles.innerSecond}>
                 <Image
                   src="/apple-airpods-max.png"
-                  width="204"
-                  height="272"
+                  width="230"
+                  height="255"
                   alt=""
                 />
                 <div className={styles.secondContent}>

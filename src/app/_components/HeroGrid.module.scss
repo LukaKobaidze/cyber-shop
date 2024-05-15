@@ -172,7 +172,7 @@
     .secondContent {
       margin-right: 2rem;
       transition: all 0.5s;
-      margin-bottom: -2rem;
+      margin-bottom: -3rem;
     }
     h2 {
       font-size: 1.8rem;
@@ -186,6 +186,7 @@
     }
     img {
       margin-right: 3.5rem;
+      margin-top: 1rem;
     }
     button {
       margin-top: 20px;
@@ -199,7 +200,7 @@
   width: 75%;
 
   .secondContent {
-    margin-bottom: 0rem;
+    margin-bottom: -1rem;
   }
 
   button {
@@ -269,4 +270,8 @@
 }
 
 @media (max-width: 1000px) {
+  .container{
+    min-height: 600px;
+    flex-direction: column;
+  }
 }
