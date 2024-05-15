@@ -2,14 +2,16 @@
 
 import { createContext, useEffect, useState } from "react";
 
+const isClient = typeof window !== "undefined";
+
 interface Context {
   viewportWidth: number;
   viewportHeight: number;
 }
 
 const initial: Context = {
-  viewportWidth: window?.innerWidth || 0,
-  viewportHeight: window?.innerHeight || 0,
+  viewportWidth: isClient ? window.innerWidth : 0,
+  viewportHeight: isClient ? window.innerHeight : 0,
 };
 
 export const ViewportContext = createContext(initial);
@@ -27,8 +29,8 @@ export function ViewportContextProvider({
   useEffect(() => {
     const handleResize = () => {
       setViewport({
-        width: window?.innerWidth || 0,
-        height: window?.innerHeight || 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
       });
     };
 
