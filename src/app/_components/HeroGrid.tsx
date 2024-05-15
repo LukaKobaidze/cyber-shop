@@ -64,7 +64,7 @@ export default function NewHeroGrid(props: Props) {
                     Apple AirPods <span className="bold">Max</span>
                   </h2>
                   <Paragraph>
-                    Computational audio. Listen, it's powerful
+                    Computational audio. Lbisten, it's powerful
                   </Paragraph>
                   <Button>Shop Now</Button>
                 </div>

@@ -7,6 +7,7 @@ import Select from "@/components/Select";
 import Pagination from "@/components/Pagination/Pagination";
 import { oneProduct } from "../_components/products.data";
 import styles from "./page.module.scss";
+import ProductsSort from "@/components/ProductsSort/ProductsSort";
 
 const fakeProducts = Array.from({ length: 85 }).map(() => oneProduct);
 const totalAmount = fakeProducts.length;
@@ -48,13 +49,7 @@ export default function CatalogPage({ searchParams }: Props) {
             <p>
               Total Products: <span>{totalAmount}</span>
             </p>
-            <Select>
-              <option>Relevance</option>
-              <option>Price (Low to High)</option>
-              <option>Price (High to Low)</option>
-              <option>Rating (Low to High)</option>
-              <option>Rating (High to Low)</option>
-            </Select>
+            <ProductsSort />
           </div>
           <ProductsGrid>
             {getProducts(currentPage).map((product) => (
