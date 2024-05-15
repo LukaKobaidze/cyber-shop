@@ -1,6 +1,6 @@
 import HeroMain from "./_components/HeroMain";
 import HeroGrid from "./_components/HeroGrid";
-import Categories from "./_components/Categories";
+import Categories from "./_components/BrowseByCategory";
 import Products from "./_components/Products";
 import Brands from "./_components/Brands";
 import Discounts from "./_components/Discounts";

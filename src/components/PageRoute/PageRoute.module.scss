@@ -1,0 +1,32 @@
+.container {
+  --clr-1: #a4a4a4;
+  --clr-2: #000000;
+
+  display: flex;
+  align-items: center;
+  height: 104px;
+}
+
+.route {
+  display: flex;
+  align-items: center;
+  color: var(--clr-1);
+  font-size: 1em;
+  font-weight: 500;
+  transition: color 125ms;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 65%;
+
+  &:last-child {
+    color: var(--clr-2);
+  }
+
+  &:hover {
+    color: var(--clr-2);
+  }
+}
+
+.arrow {
+  color: var(--clr-1);
+}

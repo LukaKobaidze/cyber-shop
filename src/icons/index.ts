@@ -1,3 +1,4 @@
+export { default as IconArrow } from "./arrow.svg";
 export { default as IconCamera } from "./camera.svg";
 export { default as IconCart } from "./cart.svg";
 export { default as IconComputer } from "./computer.svg";
