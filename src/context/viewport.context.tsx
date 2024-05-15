@@ -8,8 +8,8 @@ interface Context {
 }
 
 const initial: Context = {
-  viewportWidth: window.innerWidth,
-  viewportHeight: window.innerHeight,
+  viewportWidth: window?.innerWidth || 0,
+  viewportHeight: window?.innerHeight || 0,
 };
 
 export const ViewportContext = createContext(initial);
@@ -26,7 +26,10 @@ export function ViewportContextProvider({
 
   useEffect(() => {
     const handleResize = () => {
-      setViewport({ width: window.innerWidth, height: window.innerHeight });
+      setViewport({
+        width: window?.innerWidth || 0,
+        height: window?.innerHeight || 0,
+      });
     };
 
     window.addEventListener("resize", handleResize);
