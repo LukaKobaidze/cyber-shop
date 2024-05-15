@@ -5,9 +5,13 @@ interface Props {
   params: {
     category: string;
   };
+  searchParams?: {
+    page?: string;
+    sort?: string;
+  };
 }
 
-export default function CatalogCategoryPage({ params }: Props) {
+export default function CatalogCategoryPage({ params, searchParams }: Props) {
   return (
     <div className={`contentWrapper`}>
       <PageRoute />

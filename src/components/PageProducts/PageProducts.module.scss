@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+}
+
+.productsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.products {
+  width: 100%;
+  margin-left: 2em;
+}

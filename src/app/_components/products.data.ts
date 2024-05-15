@@ -1,6 +1,6 @@
 // DELETE THIS LATER
 
-type ProductType = {
+export type ProductType = {
   link: string;
   image: string;
   title: string;

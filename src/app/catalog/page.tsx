@@ -1,13 +1,8 @@
 import PageRoute from "@/components/PageRoute";
 import Categories from "@/components/Categories";
-import ProductsGrid from "@/components/ProductsGrid";
-import ProductsFilter from "@/components/ProductsFilter";
-import ProductCard from "@/components/ProductCard";
-import Select from "@/components/Select";
-import Pagination from "@/components/Pagination/Pagination";
 import { oneProduct } from "../_components/products.data";
 import styles from "./page.module.scss";
-import ProductsSort from "@/components/ProductsSort/ProductsSort";
+import PageProducts from "@/components/PageProducts/PageProducts";
 
 const fakeProducts = Array.from({ length: 85 }).map(() => oneProduct);
 const totalAmount = fakeProducts.length;
@@ -23,6 +18,7 @@ const getProducts = (currentPage: number) => {
 interface Props {
   searchParams?: {
     page?: string;
+    sort?: string;
   };
 }
 
@@ -42,30 +38,13 @@ export default function CatalogPage({ searchParams }: Props) {
           "/gaming",
         ]}
       />
-      <div className={styles.productsAndFilter}>
-        <ProductsFilter />
-        <div className={styles.products}>
-          <div className={styles.productsHeader}>
-            <p>
-              Total Products: <span>{totalAmount}</span>
-            </p>
-            <ProductsSort />
-          </div>
-          <ProductsGrid>
-            {getProducts(currentPage).map((product) => (
-              <ProductCard
-                title={product.title}
-                link={product.link}
-                image={product.image}
-                price={product.price}
-                wishlist={false}
-                imageSizes="20vw"
-              />
-            ))}
-          </ProductsGrid>
-          <Pagination currentPage={currentPage} totalPages={totalPages} />
-        </div>
-      </div>
+      <PageProducts
+        products={getProducts(currentPage)}
+        totalProducts={fakeProducts.length}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        className={styles.pageProducts}
+      />
     </div>
   );
 }
