@@ -1,12 +1,12 @@
-import HeroMain from "./pageComponents/HeroMain";
-import HeroGrid from "./pageComponents/HeroGrid";
-import Categories from "./pageComponents/Categories";
-import Products from "./pageComponents/Products";
-import Brands from "./pageComponents/Brands";
-import Discounts from "./pageComponents/Discounts";
-import BigSummerSale from "./pageComponents/BigSummerSale";
+import HeroMain from "./_components/HeroMain";
+import HeroGrid from "./_components/HeroGrid";
+import Categories from "./_components/Categories";
+import Products from "./_components/Products";
+import Brands from "./_components/Brands";
+import Discounts from "./_components/Discounts";
+import BigSummerSale from "./_components/BigSummerSale";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <HeroMain />
