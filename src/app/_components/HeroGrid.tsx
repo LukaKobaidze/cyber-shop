@@ -40,7 +40,11 @@ export default function NewHeroGrid(props: Props) {
             </div>
           </div>
 
-          <div className={styles.secondThirdBox}>
+          <div
+            className={`${styles.secondThirdBox} ${
+              active === "second" || active === "third" ? styles.active : ""
+            }`}
+          >
             <div
               className={`${styles.second} ${
                 active === "second" ? styles.secondActive : ""
@@ -74,16 +78,21 @@ export default function NewHeroGrid(props: Props) {
               onMouseLeave={() => setActive("none")}
             >
               <div className={styles.innerThird}>
-              <Image src="/apple-vision-pro.png" width="290" height="195" alt="" />
-              <div className={styles.thirdContent}>
-                <h2>
-                  Apple Vision <span className="bold">Pro</span>
-                </h2>
-                <Paragraph>
-                  An immersive way to experience entertainment
-                </Paragraph>
-                <Button>Shop Now</Button>
-              </div>
+                <Image
+                  src="/apple-vision-pro.png"
+                  width="290"
+                  height="195"
+                  alt=""
+                />
+                <div className={styles.thirdContent}>
+                  <h2>
+                    Apple Vision <span className="bold">Pro</span>
+                  </h2>
+                  <Paragraph>
+                    An immersive way to experience entertainment
+                  </Paragraph>
+                  <Button>Shop Now</Button>
+                </div>
               </div>
             </div>
           </div>
@@ -102,12 +111,10 @@ export default function NewHeroGrid(props: Props) {
                 Macbook <span className="bold">Air</span>
               </h2>
               <Paragraph className={styles.boxFourParagraph}>
-                The new 15‑inch MacBook Air makes room for more of what you love with a
-                spacious Liquid Retina display.
+                The new 15‑inch MacBook Air makes room for more of what you love
+                with a spacious Liquid Retina display.
               </Paragraph>
-              <Button>
-                Shop Now
-              </Button>
+              <Button>Shop Now</Button>
             </div>
             <Image src="/macbook-air.png" width="750" height="502" alt="" />
           </div>

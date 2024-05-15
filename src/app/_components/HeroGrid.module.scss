@@ -1,93 +1,105 @@
-.container{
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 600px;
   background-color: #ededed;
+  overflow: hidden;
 }
-.innerContainer{
+.innerContainer {
   max-width: 1440px;
   width: 100%;
   height: 100%;
   background-color: white;
   display: flex;
 }
-.leftBox{
+.leftBox {
   width: 50%;
   height: 100%;
   background-color: gray;
   display: flex;
   flex-direction: column;
 }
-.fourth{
+.fourth {
   width: 50%;
   height: 100%;
-  transition: all .5s;
+  transition: all 0.5s;
   background-color: #ededed;
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
   display: flex;
 
-  .innerFourth{
+  .innerFourth {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
     left: 0;
-    
-    .fourthContent{
-      transition: all .5s;
+
+    .fourthContent {
+      transition: all 0.5s;
       margin-bottom: -2rem;
       width: 450px;
       margin-left: 56px;
     }
-    h2{
+    h2 {
       font-size: 4em;
       font-weight: 300;
     }
 
-    p{
+    p {
       margin-top: 16px;
       max-width: 450px;
     }
-    img{
+    img {
       margin-top: 4rem;
     }
-    button{
+    button {
       margin-top: 20px;
       width: 184px;
       opacity: 0;
-      transition: all .2s;
+      transition: all 0.2s;
     }
   }
 }
-.fourth.fourthActive{
+.fourth.fourthActive {
   width: 75%;
 
-  button{
+  button {
     opacity: 1;
   }
 }
-.first{
+.first {
   width: 100%;
   height: 55%;
   background-color: #fff;
-  overflow: hidden;
-  transition: all .5s;
+  // overflow: hidden;
+  transition: all 0.5s;
   position: relative;
 
-  .innerFirst{
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30vw;
+    background-color: #fff;
+    transform: translateX(-100%);
+  }
+
+  .innerFirst {
     display: flex;
     position: absolute;
     align-items: center;
     top: -2.5rem;
     right: 0;
   }
-  .firstImage{
+  .firstImage {
     bottom: 5rem;
   }
-  .firstContent{
+  .firstContent {
     width: 398px;
     right: 3rem;
     display: flex;
@@ -95,111 +107,126 @@
     justify-content: center;
     flex-direction: column;
     background-color: white;
-    transition: all .5s;
+    transition: all 0.5s;
 
-    h2{
+    h2 {
       font-size: 3rem;
       font-weight: 500;
     }
 
-    p{
+    p {
       font-size: 14px;
     }
-    button{
+    button {
       margin-top: 20px;
       width: 184px;
       opacity: 0;
-      transition: all .2s;
+      transition: all 0.2s;
     }
   }
 }
-.first.firstActive{
+.first.firstActive {
   height: 75%;
 
-  button{
+  button {
     opacity: 1;
   }
 }
-.secondThirdBox{
+.secondThirdBox {
   width: 100%;
   height: 45%;
   background-color: rgb(92, 72, 72);
   display: flex;
+  transition: all 0.5s;
+
+  &.active {
+    height: 55%;
+  }
 }
-.second{
+.second {
   height: 100%;
   width: 50%;
   background-color: #ededed;
-  overflow: hidden;
-  transition: all .5s;
+  // overflow: hidden;
+  transition: all 0.5s;
   position: relative;
-  
 
-  .innerSecond{
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    height: 100%;
+    background-color: #ededed;
+    width: 300px;
+  }
+
+  .innerSecond {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
     right: 0;
-    
-    .secondContent{
+
+    .secondContent {
       margin-right: 2rem;
-      transition: all .5s;
+      transition: all 0.5s;
       margin-bottom: -2rem;
     }
-    h2{
+    h2 {
       font-size: 1.8rem;
       font-weight: 300;
       width: 176px;
       line-height: 40px;
     }
 
-    p{
+    p {
       width: 176px;
     }
-    img{
+    img {
       margin-right: 3.5rem;
     }
-    button{
+    button {
       margin-top: 20px;
       width: 184px;
       opacity: 0;
-      transition: all .2s;
+      transition: all 0.2s;
     }
   }
 }
-.second.secondActive{
+.second.secondActive {
   width: 75%;
 
-  .secondContent{
+  .secondContent {
     margin-bottom: 0rem;
   }
 
-  button{
+  button {
     opacity: 1;
   }
 }
-.third{
+.third {
   height: 100%;
   width: 50%;
   overflow: hidden;
-  transition: all .5s;
+  transition: all 0.5s;
   position: relative;
   background-color: #353535;
 
-  .innerThird{
+  .innerThird {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
     right: 0;
-    
-    .thirdContent{
+
+    .thirdContent {
       margin-right: 2rem;
-      transition: all .5s;
+      transition: all 0.5s;
       margin-bottom: -5.5rem;
     }
-    h2{
+    h2 {
       font-size: 1.8rem;
       font-weight: 300;
       line-height: 40px;
@@ -207,40 +234,39 @@
       color: white;
     }
 
-    p{
+    p {
       width: 176px;
     }
-    img{
+    img {
       margin-top: 1.8rem;
       margin-right: 1rem;
       transform: scaleX(-1);
     }
-    button{
+    button {
       margin-top: 20px;
       width: 184px;
       opacity: 0;
-      transition: all .2s;
+      transition: all 0.2s;
       border-color: white;
       color: white;
 
-      &:hover{
+      &:hover {
         background: white;
         color: black;
       }
     }
   }
 }
-.third.thirdActive{
+.third.thirdActive {
   width: 75%;
 
-  .thirdContent{
-    margin-bottom: -2rem;
+  .thirdContent {
+    margin-bottom: -4rem;
   }
-  button{
+  button {
     opacity: 1;
   }
 }
 
-@media(max-width: 1000px){
-
+@media (max-width: 1000px) {
 }
