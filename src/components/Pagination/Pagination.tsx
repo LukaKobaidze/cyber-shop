@@ -16,13 +16,9 @@ export default function Pagination(props: Props) {
   const pages = useMemo(() => {
     let arr = [];
 
-    console.log(currentPage);
-
     if (currentPage !== 1 && currentPage !== totalPages) {
       arr.push(currentPage);
     }
-
-    console.log("after current page: ", arr);
 
     // Left side of the Current Page
     if (currentPage > 2) {
@@ -32,7 +28,6 @@ export default function Pagination(props: Props) {
         arr.unshift(currentPage - 2);
       }
     }
-    console.log("after left side: ", arr);
 
     // Right side of the Current Page
     if (currentPage < totalPages - 1) {
@@ -42,7 +37,7 @@ export default function Pagination(props: Props) {
         arr.push(currentPage + 2);
       }
     }
-    console.log("after right side: ", arr);
+
     return arr;
   }, [currentPage]);
 

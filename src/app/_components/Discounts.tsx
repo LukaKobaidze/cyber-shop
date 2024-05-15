@@ -21,9 +21,7 @@ export default function Discounts(props: Props) {
             price={product.price}
             wishlist={false}
             imageSizes="20vw"
-            onToggleWishlist={() => {
-              console.log("toggle");
-            }}
+            onToggleWishlist={() => {}}
           />
         ))}
       </ProductsGrid>

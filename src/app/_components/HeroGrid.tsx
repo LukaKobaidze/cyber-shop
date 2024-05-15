@@ -1,13 +1,17 @@
 "use client";
-import { useState } from "react";
+
+import { useContext, useEffect, useState } from "react";
 import styles from "./HeroGrid.module.scss";
 import Image from "next/image";
 import Paragraph from "@/components/Paragraph";
 import Button from "@/components/Button";
+import { ViewportContext } from "@/context/viewport.context";
 
 interface Props {}
 
 export default function NewHeroGrid(props: Props) {
+  const { viewportWidth } = useContext(ViewportContext);
+
   const [active, setActive] = useState("none");
 
   return (
@@ -18,7 +22,9 @@ export default function NewHeroGrid(props: Props) {
             className={`${styles.first} ${
               active === "first" ? styles.firstActive : ""
             } `}
-            onMouseEnter={() => setActive("first")}
+            onMouseEnter={
+              viewportWidth > 1000 ? () => setActive("first") : undefined
+            }
             onMouseLeave={() => setActive("none")}
           >
             <div className={styles.innerFirst}>
