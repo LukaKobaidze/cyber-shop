@@ -65,7 +65,7 @@
   --offset: 0.5em;
   position: absolute;
   color: rgba(0, 0, 0, 0.35);
-  width: 14px;
+  width: 14px;  
   transition: color 125ms;
 
   &From {
@@ -74,4 +74,11 @@
   &To {
     right: var(--offset);
   }
+}
+
+.submitButton {
+  width: 100%;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  margin-top: 0.75em;
 }

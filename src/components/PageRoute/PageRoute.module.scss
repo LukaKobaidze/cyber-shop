@@ -22,7 +22,7 @@
     color: var(--clr-2);
   }
 
-  &:hover {
+  &:hover, &:focus-visible {
     color: var(--clr-2);
   }
 }

@@ -44,8 +44,10 @@ export default function Pagination(props: Props) {
   return (
     <div className={`${styles.container} ${className || ""}`} {...restProps}>
       <Link
-        href={searchQueryPrefix + (currentPage - 1)}
-        className={`${styles.arrowLink} ${styles.arrowLinkLeft}`}
+        href={searchQueryPrefix + Math.max(currentPage - 1, 1)}
+        className={`${styles.arrowLink} ${styles.arrowLinkLeft} ${
+          currentPage === 1 ? styles.disabled : ""
+        }`}
       >
         <IconArrow className={styles.arrowIcon} />
       </Link>
