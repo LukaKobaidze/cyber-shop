@@ -1,7 +1,7 @@
 "use client";
 import ProductCard from "@/components/ProductCard";
 import styles from "./Discounts.module.scss";
-import { oneProduct } from "./products.data";
+import { oneProduct } from "@/data/products.data";
 import ProductsGrid from "@/components/ProductsGrid";
 
 const fakeData = [oneProduct, oneProduct, oneProduct, oneProduct];
@@ -15,7 +15,8 @@ export default function Discounts(props: Props) {
       <ProductsGrid>
         {fakeData.map((product) => (
           <ProductCard
-            link={product.link}
+            id={product.id}
+            slug={product.slug}
             title={product.title}
             image={product.image}
             price={product.price}

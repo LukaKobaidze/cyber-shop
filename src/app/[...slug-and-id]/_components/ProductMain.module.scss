@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  align-items: center;
+  min-height: 672px;
+}
+
+.images {
+  height: 516px;
+  width: 50%;
+  display: flex;
+
+  &Aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+
+    &Button {
+      flex-basis: 100%;
+      position: relative;
+      opacity: 0.4;
+      transition: opacity 125ms;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &Main {
+    height: 100%;
+    width: 80%;
+    position: relative;
+    display: flex;
+  }
+}
+
+.info {
+  width: 50%;
+
+  &Heading {
+    font-size: 2.5em;
+    font-weight: 800;
+  }
+  
+  &Price {
+    margin-top: 1.5em;
+    font-size: 2em;
+  }
+
+  &Paragraph {
+    margin-top: 1.714285714em;
+  }
+}
+
+.image {
+  height: auto !important;
+  object-fit: cover;
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+.buttonsWrapper {
+  display: flex;
+  margin-top: 2em;
+
+  & > * {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+}

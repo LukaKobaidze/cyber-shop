@@ -1,4 +1,11 @@
 .container {
   width: 256px;
   overflow: hidden;
+  position: sticky;
+  top: 90px;
+  height: 100%;
+  margin-bottom: 75px;
+}
+
+.sticky {
 }

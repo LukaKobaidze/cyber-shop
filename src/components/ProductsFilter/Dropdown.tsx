@@ -4,12 +4,13 @@ import styles from "./Dropdown.module.scss";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   label: string;
+  expandedInitially?: boolean;
 }
 
 export default function Dropdown(props: Props) {
-  const { label, children, ...restProps } = props;
+  const { label, expandedInitially, children, ...restProps } = props;
 
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(expandedInitially || false);
 
   return (
     <div {...restProps}>

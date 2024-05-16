@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./Products.module.scss";
-import { productsData } from "./products.data";
+import { productsData } from "@/data/products.data";
 import ProductCard from "@/components/ProductCard";
 import ProductsGrid from "@/components/ProductsGrid";
 
@@ -31,7 +31,8 @@ export default function Products(props: Props) {
       <ProductsGrid>
         {productsData.map((product) => (
           <ProductCard
-            link={product.link}
+            id={product.id}
+            slug={product.slug}
             image={product.image}
             title={product.title}
             price={product.price}

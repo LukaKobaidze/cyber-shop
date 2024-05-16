@@ -6,26 +6,40 @@ import { IconWishlist, IconWishlistFilled } from "@/icons";
 import Tooltip from "../Tooltip";
 import Link from "next/link";
 import styles from "./ProductCard.module.scss";
+import Price from "../Price";
 
 interface Props {
-  link: string;
+  id: string;
+  slug: string;
   image: string;
   title: string;
   price: number;
   imageSizes: string;
   wishlist: boolean;
+  salePercentage?: number;
   onToggleWishlist?: () => void;
 }
 
 export default function ProductCard(props: Props) {
-  const { link, image, title, price, imageSizes, wishlist, onToggleWishlist } =
-    props;
+  const {
+    id,
+    slug,
+    image,
+    title,
+    price,
+    imageSizes,
+    wishlist,
+    salePercentage,
+    onToggleWishlist,
+  } = props;
 
   const tooltipText = wishlist ? "Remove from Wishlist" : "Add to Wishlist";
 
+  const href = "/" + slug + "/" + id;
+
   return (
     <div className={`card ${styles.container}`}>
-      <Link href={link} className={styles.imageWrapper} tabIndex={-1}>
+      <Link href={href} className={styles.imageWrapper} tabIndex={-1}>
         <Image
           src={image}
           fill
@@ -34,10 +48,14 @@ export default function ProductCard(props: Props) {
           className={styles.image}
         />
       </Link>
-      <Link href={link} className={styles.title}>
+      <Link href={href} className={styles.title}>
         {title}
       </Link>
-      <span className={styles.price}>${price}</span>
+      <Price
+        price={price}
+        salePercentage={salePercentage}
+        className={styles.price}
+      />
       <Button className={styles.buyNowButton}>Add to Cart</Button>
       <Tooltip position="top" text={tooltipText}>
         <button

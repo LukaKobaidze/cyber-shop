@@ -1,26 +1,23 @@
-"use client";
-
-import { usePathname } from "next/navigation";
 import styles from "./PageRoute.module.scss";
 import Link from "next/link";
 import { hyphenCaseToTitleCase } from "@/utils";
 import { IconArrow } from "@/icons";
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {}
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  routes: string[];
+}
 
 export default function PageRoute(props: Props) {
-  const { className, ...restProps } = props;
+  const { routes, className, ...restProps } = props;
 
-  const pathname = usePathname();
-
-  const routes = pathname.slice(1).split("/");
+  const lastRoute = routes[routes.length - 1];
 
   return (
     <div className={`${styles.container} ${className}`} {...restProps}>
       <Link href="/" className={styles.route}>
         Home
       </Link>
-      {routes.map((route) => (
+      {routes.slice(0, -1).map((route) => (
         <>
           <div className={styles.arrow}>
             <IconArrow />
@@ -30,6 +27,12 @@ export default function PageRoute(props: Props) {
           </Link>
         </>
       ))}
+      <>
+        <div className={styles.arrow}>
+          <IconArrow />
+        </div>
+        <span className={styles.route}>{hyphenCaseToTitleCase(lastRoute)}</span>
+      </>
     </div>
   );
 }
