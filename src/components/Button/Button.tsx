@@ -1,5 +1,5 @@
-import Link, { LinkProps } from 'next/link';
-import styles from './Button.module.scss';
+import Link, { LinkProps } from "next/link";
+import styles from "./Button.module.scss";
 
 type Props = (
   | ({
@@ -10,7 +10,7 @@ type Props = (
       asLink: true;
     } & React.AnchorHTMLAttributes<HTMLAnchorElement> &
       LinkProps)
-) & { variant?: '1' | '2' };
+) & { variant?: "1" | "2" };
 
 export default function Button(props: Props) {
   if (props.asLink) {
@@ -19,7 +19,7 @@ export default function Button(props: Props) {
     return (
       <Link
         className={`${styles.button} ${styles[`button--${variant}`]} ${
-          className || ''
+          className || ""
         }`}
         {...restProps}
       >
@@ -32,7 +32,7 @@ export default function Button(props: Props) {
     return (
       <button
         className={`${styles.button} ${styles[`button--${variant}`]} ${
-          className || ''
+          className || ""
         }`}
         {...restProps}
       >

@@ -24,8 +24,6 @@ export default function PriceFilter(props: Props) {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    console.log(priceRange);
   };
 
   return (

@@ -5,6 +5,7 @@ import Paragraph from "@/components/Paragraph";
 import Button from "@/components/Button";
 import Image from "next/image";
 import { useState } from "react";
+import { IconDelivery, IconGuaranteed, IconStock } from "@/icons";
 
 interface Props {
   images: string[];
@@ -58,10 +59,55 @@ export default function ProductMain(props: Props) {
           salePercentage={salePercentage}
           className={styles.infoPrice}
         />
+        <div className={styles.infoVariants}>
+          <a href="/" className={styles.infoVariantsItem}>
+            128GB
+          </a>
+          <a href="/" className={styles.infoVariantsItem}>
+            256GB
+          </a>
+          <a href="/" className={styles.infoVariantsItem}>
+            512GB
+          </a>
+          <a href="/" className={`${styles.infoVariantsItem} ${styles.active}`}>
+            1TB
+          </a>
+        </div>
         <Paragraph className={styles.infoParagraph}>{description}</Paragraph>
         <div className={styles.buttonsWrapper}>
           <Button className={styles.addToCart}>Add to Cart</Button>
           <Button>Buy Now</Button>
+        </div>
+        <div className={styles.deliveryDetailsWrapper}>
+          <div className={styles.deliveryDetail}>
+            <div className={styles.deliveryDetailIconWrapper}>
+              <IconDelivery />
+            </div>
+            <div className={styles.deliveryDetailTextWrapper}>
+              <span className={styles.deliveryDetailTextName}>
+                Free Delivery
+              </span>
+              <span className={styles.deliveryDetailTextValue}>1-2 day</span>
+            </div>
+          </div>
+          <div className={styles.deliveryDetail}>
+            <div className={styles.deliveryDetailIconWrapper}>
+              <IconStock />
+            </div>
+            <div className={styles.deliveryDetailTextWrapper}>
+              <span className={styles.deliveryDetailTextName}>In Stock</span>
+              <span className={styles.deliveryDetailTextValue}>Today</span>
+            </div>
+          </div>
+          <div className={styles.deliveryDetail}>
+            <div className={styles.deliveryDetailIconWrapper}>
+              <IconGuaranteed />
+            </div>
+            <div className={styles.deliveryDetailTextWrapper}>
+              <span className={styles.deliveryDetailTextName}>Guaranteed</span>
+              <span className={styles.deliveryDetailTextValue}>1 year</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

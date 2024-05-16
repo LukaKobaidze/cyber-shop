@@ -1,0 +1,46 @@
+.container {
+  background-color: #fafafa;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.contentWrapper {
+  background-color: #fff;
+  border-radius: 0.5em;
+  padding: 3em 2.5em;
+}
+
+.mainHeading {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.description {
+  margin-top: 2.285714286em;
+}
+
+.detailTitle {
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.8em;
+  font-weight: 500;
+}
+
+.detailList {
+  list-style: none;
+  font-weight: 4s00;
+
+  &Item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #cdcdcd;
+    margin-bottom: 1.5em;
+
+    &Name {
+    }
+    &Value {
+    }
+  }
+}

@@ -15,13 +15,13 @@ interface Props {
 export default function ProductPage({ params }: Props) {
   const [slug, id] = params["slug-and-id"];
 
-  console.log({ slug, id });
-
   const data = getProductPageData(id);
 
   return (
-    <div className={`contentWrapper`}>
-      <PageRoute routes={["catalog", data.category, data.brand, slug]} />
+    <div>
+      <div className="contentWrapper">
+        <PageRoute routes={["catalog", data.category, data.brand, slug]} />
+      </div>
       <ProductMain
         images={data.images}
         title={data.title}
@@ -29,7 +29,7 @@ export default function ProductPage({ params }: Props) {
         price={data.price}
         salePercentage={data.salePercentage}
       />
-      <ProductDetails />
+      <ProductDetails description={data.description} details={data.details} />
       <ProductReviews />
       <RelatedProducts />
     </div>
