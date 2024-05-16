@@ -1,4 +1,4 @@
-import { ProductType } from "@/app/_components/products.data";
+import { ProductType } from "@/data/products.data";
 import Pagination from "../Pagination/Pagination";
 import ProductCard from "../ProductCard";
 import ProductsFilter from "../ProductsFilter";
@@ -18,22 +18,25 @@ export default function PageProducts(props: Props) {
   const { products, totalProducts, currentPage, totalPages, className } = props;
 
   return (
-    <div className={`${styles.container} ${className || ''}`}>
+    <div className={`${styles.container} ${className || ""}`}>
       <ProductsFilter />
       <div className={styles.products}>
         <div className={styles.productsHeader}>
-          <p>
-            Total Products: <span>{totalProducts}</span>
+          <p className={styles.totalProducts}>
+            Total Products:{" "}
+            <span className={styles.totalProductsNumber}>{totalProducts}</span>
           </p>
           <ProductsSort />
         </div>
         <ProductsGrid>
           {products.map((product) => (
             <ProductCard
+              id={product.id}
+              slug={product.slug}
               title={product.title}
-              link={product.link}
               image={product.image}
               price={product.price}
+              salePercentage={product.salePercentage}
               wishlist={false}
               imageSizes="20vw"
             />

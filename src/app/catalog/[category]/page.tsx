@@ -1,7 +1,7 @@
 import PageRoute from "@/components/PageRoute";
 import styles from "./page.module.scss";
 import PageProducts from "@/components/PageProducts/PageProducts";
-import { oneProduct } from "@/app/_components/products.data";
+import { oneProduct } from "@/data/products.data";
 
 const fakeProducts = Array.from({ length: 85 }).map(() => oneProduct);
 const totalAmount = fakeProducts.length;
@@ -31,7 +31,7 @@ export default function CatalogCategoryPage({ params, searchParams }: Props) {
 
   return (
     <div className={`contentWrapper ${styles.container}`}>
-      <PageRoute />
+      <PageRoute routes={["catalog", category]} />
       <PageProducts
         currentPage={currentPage}
         products={getProducts(currentPage)}

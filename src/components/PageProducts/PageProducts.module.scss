@@ -9,6 +9,16 @@
   margin-bottom: 1.5em;
 }
 
+.totalProducts {
+  font-weight: 500;
+  color: #6c6c6c;
+
+  &Number {
+    color: #000;
+    font-size: 1.25em;
+  }
+}
+
 .products {
   width: 100%;
   margin-left: 2em;

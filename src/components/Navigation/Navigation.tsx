@@ -20,7 +20,7 @@ export default function Navigation(props: Props) {
       <Link
         href="/catalog"
         className={`${styles.link} ${
-          pathname === "/catalog" ? styles.active : ""
+          pathname.startsWith("/catalog") ? styles.active : ""
         }`}
       >
         Catalog

@@ -1,6 +1,6 @@
 import PageRoute from "@/components/PageRoute";
 import Categories from "@/components/Categories";
-import { oneProduct } from "../_components/products.data";
+import { oneProduct } from "@/data/products.data";
 import styles from "./page.module.scss";
 import PageProducts from "@/components/PageProducts/PageProducts";
 
@@ -27,7 +27,7 @@ export default function CatalogPage({ searchParams }: Props) {
 
   return (
     <div className={`contentWrapper ${styles.container}`}>
-      <PageRoute />
+      <PageRoute routes={["catalog"]} />
       <Categories
         categoriesArr={[
           "/phones",
