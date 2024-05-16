@@ -1,0 +1,19 @@
+.container {
+  padding-top: 7em;
+  padding-bottom: 7em;
+  display: flex;
+  align-items: flex-start;
+
+  & > div {
+    flex-basis: 100%;
+  }
+}
+
+.products {
+  margin-right: 3em;
+}
+
+.heading {
+  font-size: 1.5em;
+  margin-bottom: 1.666666667em;
+}
