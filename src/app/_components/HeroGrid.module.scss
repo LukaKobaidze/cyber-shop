@@ -26,7 +26,6 @@
   height: 100%;
   transition: all 0.5s;
   background-color: #ededed;
-  // overflow: hidden;
   position: relative;
   display: flex;
 
@@ -74,7 +73,6 @@
   width: 100%;
   height: 55%;
   background-color: #fff;
-  // overflow: hidden;
   transition: all 0.5s;
   position: relative;
 
@@ -147,7 +145,6 @@
   height: 100%;
   width: 50%;
   background-color: #ededed;
-  // overflow: hidden;
   transition: all 0.5s;
   position: relative;
 
@@ -270,8 +267,194 @@
 }
 
 @media (max-width: 1000px) {
-  .container{
+  .container {
     min-height: 600px;
+    height: 100%;
     flex-direction: column;
+  }
+  .innerContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+  .leftBox {
+    width: 100%;
+  }
+  .fourth {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .innerFourth {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-bottom: 5rem;
+
+      .fourthContent {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      img {
+        width: 375px;
+        height: 227px;
+        margin-top: 0;
+      }
+      h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 2.2rem;
+        margin-top: 0.5em;
+      }
+      p {
+        margin-top: 0.2rem;
+        width: 100%;
+        text-align: center;
+      }
+      button {
+        max-width: 310px;
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+  .first {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .innerFirst {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .firstContent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      img {
+        width: 384px;
+        height: 354px;
+      }
+      h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 2.2rem;
+        margin-top: 0.5em;
+      }
+      p {
+        margin-top: 0.2rem;
+        width: 100%;
+        text-align: center;
+      }
+      button {
+        max-width: 310px;
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+  .secondThirdBox {
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+  }
+  .second {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .innerSecond {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-bottom: 6rem;
+
+      .secondContent {
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      img {
+        margin-right: 0;
+      }
+      h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 2.2rem;
+        margin-top: 0.5em;
+      }
+      p {
+        margin-top: 0.2rem;
+        width: 100%;
+        text-align: center;
+      }
+      button {
+        max-width: 310px;
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+  .third {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .innerThird {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-bottom: 8rem;
+
+      .thirdContent {
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      img {
+        margin-right: 0;
+      }
+      h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 2.2rem;
+        margin-top: 0.5em;
+      }
+      p {
+        margin-top: 0.2rem;
+        width: 100%;
+        text-align: center;
+      }
+      button {
+        max-width: 310px;
+        width: 100%;
+        opacity: 1;
+      }
+    }
   }
 }

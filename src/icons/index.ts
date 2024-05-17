@@ -23,3 +23,8 @@ export { default as IconFacebook } from "./facebook.svg";
 export { default as IconTwitter } from "./twitter.svg";
 export { default as IconTiktok } from "./tiktok.svg";
 export { default as IconInstagram } from "./instagram.svg";
+export { default as IconLocation } from "./location.svg";
+export { default as IconPayment } from "./payment.svg";
+export { default as IconShipping } from "./shipping.svg";
+export { default as IconArrowDown } from "./arrowDown.svg";
+

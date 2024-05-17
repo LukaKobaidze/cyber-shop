@@ -55,7 +55,7 @@ export default function NewHeroGrid(props: Props) {
               className={`${styles.second} ${
                 active === "second" ? styles.secondActive : ""
               }`}
-              onMouseEnter={() => setActive("second")}
+              onMouseEnter={viewportWidth > 1000 ? () => setActive("second") : undefined}
               onMouseLeave={() => setActive("none")}
             >
               <div className={styles.innerSecond}>
@@ -80,7 +80,7 @@ export default function NewHeroGrid(props: Props) {
               className={`${styles.third} ${
                 active === "third" ? styles.thirdActive : ""
               }`}
-              onMouseEnter={() => setActive("third")}
+              onMouseEnter={viewportWidth > 1000 ? () => setActive("third") : undefined}
               onMouseLeave={() => setActive("none")}
             >
               <div className={styles.innerThird}>
@@ -108,7 +108,7 @@ export default function NewHeroGrid(props: Props) {
           className={`${styles.fourth} ${
             active === "fourth" ? styles.fourthActive : ""
           }`}
-          onMouseEnter={() => setActive("fourth")}
+          onMouseEnter={viewportWidth > 1000 ? () => setActive("fourth") : undefined}
           onMouseLeave={() => setActive("none")}
         >
           <div className={styles.innerFourth}>
