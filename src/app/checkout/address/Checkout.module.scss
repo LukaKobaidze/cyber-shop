@@ -1,0 +1,23 @@
+.container{
+  display: flex;
+  justify-content: center;
+  min-height: 400px;
+}
+.contentWrapper{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  margin-top: 48px;
+}
+.title{
+  font-weight: 600;
+  font-size: 20px;
+}
+.content{
+  width: 100%;
+  min-height: 500px;
+  margin-top: 2rem;
+
+}

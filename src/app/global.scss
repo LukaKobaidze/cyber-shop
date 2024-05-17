@@ -70,3 +70,64 @@ a {
 ::-webkit-scrollbar-thumb:hover{
   background-color: rgb(0, 0, 0);
 }
+
+
+// date picker styles
+
+/* Style the header */
+.react-datepicker__header {
+  background-color: black !important;
+  border-bottom: 1px solid black !important;
+}
+.react-datepicker__triangle {
+  color: #000 !important; 
+}
+.react-datepicker__triangle path {
+  fill: #000 !important;
+}
+
+/* Style the month and year caption */
+.react-datepicker__current-month,
+.react-datepicker__current-year {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+/* Style the day names */
+.react-datepicker__day-name {
+  color: white !important;
+}
+
+/* Style the days */
+.react-datepicker__day {
+  color: #333;
+}
+
+/* Style the selected day */
+.react-datepicker__day--selected {
+  background-color: black !important;
+}
+/* Increasing specificity */
+.react-datepicker__navigation--next{
+  /* Your styles here */
+  border-left-color: blue !important; /* Example color change */
+}
+.react-datepicker__input-container input {
+  /* Your styling here */
+  width: fit-content !important;
+  padding: 8px !important;
+  outline: none !important;
+  border: none !important;
+  font-weight: 500 !important;
+  border-radius: 4px !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  padding-right: 1.5rem !important;
+  text-align: right !important;
+}
+
+/* Optionally, style the placeholder text */
+.react-datepicker__input-container input::placeholder {
+  color: #999 !important;
+}

@@ -1,0 +1,27 @@
+.warning{
+  width: 100%;
+  min-height: 4rem;
+  padding: 3%;
+  background-color: #F6F6F6;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  p{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  li{
+    font-size: 18px;
+    font-weight: 400;
+    list-style: decimal;
+    margin-bottom: 1.5rem;
+    margin-left: 4rem;
+  }
+  strong{
+    font-weight: 600;
+  }
+}

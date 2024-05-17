@@ -1,4 +1,4 @@
-import styles from "./layout.module.scss";
+import Steps from "./_components/Steps";
 
 export default function CheckoutLayout({
   children,
@@ -7,7 +7,7 @@ export default function CheckoutLayout({
 }>) {
   return (
     <>
-      <div>STEPS</div>
+      <Steps />
       {children}
     </>
   );
