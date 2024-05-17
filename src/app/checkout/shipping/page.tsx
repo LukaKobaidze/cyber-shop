@@ -30,9 +30,13 @@ export default function ShippingPage(props: Props) {
   const oneYearLater = new Date(today);
   oneYearLater.setFullYear(oneYearLater.getFullYear() + 1);
 
-  const [selectedDatePicker, setSelectedDatePicker] = useState<Date | null>(null);
+  const [selectedDatePicker, setSelectedDatePicker] = useState<Date | null>(
+    null
+  );
   const [selectedOption, setSelectedOption] = useState<string>("free");
-  const [selectedTime, setSelectedTime] = useState<string>(freeDeliveryDateString);
+  const [selectedTime, setSelectedTime] = useState<string>(
+    freeDeliveryDateString
+  );
 
   const handleDateChange = (date: Date | null) => {
     setSelectedDatePicker(date);
@@ -41,11 +45,13 @@ export default function ShippingPage(props: Props) {
   // storing the time inside selected time based on the chooosen option
   useEffect(() => {
     if (selectedOption === "schedule" && selectedDatePicker) {
-      setSelectedTime(selectedDatePicker.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "2-digit",
-      }));
+      setSelectedTime(
+        selectedDatePicker.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "short",
+          day: "2-digit",
+        })
+      );
     }
   }, [selectedDatePicker]);
 
@@ -56,11 +62,13 @@ export default function ShippingPage(props: Props) {
     } else if (option === "expedited") {
       setSelectedTime(soonDeliveryDateString);
     } else if (option === "schedule" && selectedDatePicker) {
-      setSelectedTime(selectedDatePicker.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "2-digit",
-      }));
+      setSelectedTime(
+        selectedDatePicker.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "short",
+          day: "2-digit",
+        })
+      );
     } else {
       setSelectedTime("");
     }
@@ -73,7 +81,9 @@ export default function ShippingPage(props: Props) {
 
         <div className={styles.content}>
           <div
-            className={`${styles.shippingOption} ${selectedOption === "free" && styles.selected}`}
+            className={`${styles.shippingOption} ${
+              selectedOption === "free" && styles.selected
+            }`}
             onClick={() => handleOptionClick("free")}
           >
             <div className={styles.left}>
@@ -92,7 +102,9 @@ export default function ShippingPage(props: Props) {
           </div>
 
           <div
-            className={`${styles.shippingOption} ${selectedOption === "expedited" && styles.selected}`}
+            className={`${styles.shippingOption} ${
+              selectedOption === "expedited" && styles.selected
+            }`}
             onClick={() => handleOptionClick("expedited")}
           >
             <div className={styles.left}>
@@ -111,7 +123,9 @@ export default function ShippingPage(props: Props) {
           </div>
 
           <div
-            className={`${styles.shippingOption} ${selectedOption === "schedule" && styles.selected}`}
+            className={`${styles.shippingOption} ${
+              selectedOption === "schedule" && styles.selected
+            }`}
             onClick={() => handleOptionClick("schedule")}
           >
             <div className={styles.left}>
