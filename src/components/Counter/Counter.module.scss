@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 0.5em;
+}
+
+.button {
+  padding: 0.6em;
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 125ms;
+
+  &:hover,
+  &:focus-visible {
+    color: #000;
+  }
+}
+
+.value {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}

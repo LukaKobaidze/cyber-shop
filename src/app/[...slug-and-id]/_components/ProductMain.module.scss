@@ -1,7 +1,8 @@
 .container {
   display: flex;
   align-items: center;
-  min-height: 672px;
+  margin-top: 7em;
+  margin-bottom: 7em;
 }
 
 .images {
@@ -18,11 +19,16 @@
     &Button {
       flex-basis: 100%;
       position: relative;
-      opacity: 0.4;
-      transition: opacity 125ms;
+
+      & > img {
+        transition: opacity 125ms;
+        opacity: 0.4;
+      }
 
       &.active {
-        opacity: 1;
+        & > img {
+          opacity: 1;
+        }
       }
     }
   }
@@ -42,10 +48,38 @@
     font-size: 2.5em;
     font-weight: 800;
   }
-  
+
   &Price {
     margin-top: 1.5em;
-    font-size: 2em;
+    font-size: 1.333333333em;
+  }
+
+  &Variants {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1em;
+    margin-top: 1.5em;
+
+    &Item {
+      text-align: center;
+      padding-top: 1.142857143em;
+      padding-bottom: 1.142857143em;
+      font-size: 0.875em;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 0.571428571em;
+      transition: border-color 125ms;
+      color: #6f6f6f;
+      font-weight: 500;
+
+      &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.5);
+      }
+
+      &.active {
+        border-color: #000;
+        color: #000;
+      }
+    }
   }
 
   &Paragraph {
@@ -70,5 +104,44 @@
     &:not(:last-child) {
       margin-right: 1em;
     }
+  }
+}
+
+.deliveryDetailsWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.deliveryDetail {
+  display: flex;
+
+  &IconWrapper {
+    width: 56px;
+    height: 56px;
+    background-color: #f6f6f6;
+    border-radius: 0.6875em;
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &Icon {
+  }
+
+  &TextWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.875em;
+    font-weight: 500;
+    line-height: 1.5em;
+  }
+  &TextName {
+    color: #717171;
+  }
+  &TextValue {
+    color: #000;
   }
 }

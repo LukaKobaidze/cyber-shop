@@ -1,7 +1,6 @@
 .priceWrapper {
   display: flex;
   align-items: center;
-  font-size: 1em;
 }
 
 .price {
@@ -10,7 +9,7 @@
 }
 
 .priceBeforeSale {
-  margin-left: 7px;
+  margin-left: 0.4375em;
   color: #a0a0a0;
   text-decoration: line-through;
 }

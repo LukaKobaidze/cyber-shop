@@ -1,0 +1,56 @@
+.container {
+  padding-top: 5.5em;
+  padding-bottom: 5.5em;
+}
+
+.heading {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+
+.detailsWrapper {
+  display: flex;
+}
+
+.reviewAverage {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  background-color: #fafafa;
+  border-radius: 1.5625em;
+  padding: 2em;
+  margin-right: 3.75em;
+
+  &Number {
+    font-size: 3.5em;
+  }
+  &OutOf {
+    margin-top: 1.066666667em;
+    margin-bottom: 1.066666667em;
+    font-size: 0.9375em;
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.reviewsGrid {
+  width: 100%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  grid-auto-flow: row;
+  align-items: center;
+  gap: 1em;
+}
+
+.reviewsLabel {
+  white-space: nowrap;
+  font-size: 1.125em;
+  padding-right: 1.34em;
+}
+
+.reviewsAmount {
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: auto;
+}

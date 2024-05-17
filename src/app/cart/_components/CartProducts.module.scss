@@ -1,0 +1,40 @@
+.container {
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  &ImageWrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+  }
+
+  &Title {
+    font-weight: 500;
+    margin-left: 0.9375em;
+    margin-right: 0.7em;
+  }
+
+  &Price {
+    flex-direction: column-reverse;
+    margin-left: 1.79em;
+    font-size: 0.84em;
+    flex-shrink: 0;
+  }
+
+  &Remove {
+    margin-left: 1.5em;
+    padding: 0.3em;
+    margin-right: -0.3em;
+  }
+}

@@ -1,0 +1,38 @@
+.container {
+  padding: 3.5em 4em;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ebebeb;
+  border-radius: 0.625em;
+  position: sticky;
+  top: 100px;
+}
+
+.heading {
+  font-size: 1.25em;
+  margin-bottom: 2em;
+}
+
+.inputLabel {
+  font-size: 0.875em;
+  margin-bottom: 0.571428571em;
+}
+
+.input {
+  margin-bottom: 1.5em;
+}
+
+.keyValue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.checkoutButton {
+  width: 100%;
+  text-align: center;
+}
