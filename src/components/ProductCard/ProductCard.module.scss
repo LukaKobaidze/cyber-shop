@@ -42,4 +42,8 @@ img.image {
   &:focus-visible {
     color: #000;
   }
+
+  &.active {
+    color: #ff0000;
+  }
 }

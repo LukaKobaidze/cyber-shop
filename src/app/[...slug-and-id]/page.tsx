@@ -27,7 +27,7 @@ export default function ProductPage({ params }: Props) {
         title={data.title}
         description={data.description}
         price={data.price}
-        salePercentage={data.salePercentage}
+        priceDiscount={data.priceDiscount}
       />
       <ProductDetails description={data.description} details={data.details} />
       <ProductReviews />

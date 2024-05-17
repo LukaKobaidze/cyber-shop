@@ -2,21 +2,21 @@ import styles from "./Price.module.scss";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   price: number;
-  salePercentage?: number;
+  priceDiscount?: number;
 }
 
 export default function Price(props: Props) {
-  const { price, salePercentage, className, ...restProps } = props;
+  const { price, priceDiscount, className, ...restProps } = props;
 
-  const renderPrice = salePercentage
-    ? price - (price * salePercentage) / 100
+  const renderPrice = priceDiscount
+    ? price - (price * priceDiscount) / 100
     : price;
 
   return (
     <div className={`${styles.priceWrapper} ${className}`} {...restProps}>
       <span className={styles.price}>${renderPrice}</span>
 
-      {salePercentage && (
+      {priceDiscount && (
         <span className={styles.priceBeforeSale}>${price}</span>
       )}
     </div>

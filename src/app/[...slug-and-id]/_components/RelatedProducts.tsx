@@ -19,7 +19,7 @@ export default function RelatedProducts(props: Props) {
             wishlist={false}
             title={product.title}
             price={product.price}
-            salePercentage={product.salePercentage}
+            priceDiscount={product.priceDiscount}
           />
         ))}
       </ProductsGrid>

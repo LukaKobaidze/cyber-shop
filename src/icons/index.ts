@@ -1,6 +1,7 @@
 export { default as IconArrowExpand } from "./arrow-expand.svg";
 export { default as IconArrow } from "./arrow.svg";
 export { default as IconCamera } from "./camera.svg";
+export { default as IconCartFilled } from "./cart-filled.svg";
 export { default as IconCart } from "./cart.svg";
 export { default as IconClose } from "./close.svg";
 export { default as IconComputer } from "./computer.svg";
@@ -27,4 +28,3 @@ export { default as IconLocation } from "./location.svg";
 export { default as IconPayment } from "./payment.svg";
 export { default as IconShipping } from "./shipping.svg";
 export { default as IconArrowDown } from "./arrowDown.svg";
-

@@ -7,6 +7,7 @@ import Tooltip from "../Tooltip";
 import Link from "next/link";
 import styles from "./ProductCard.module.scss";
 import Price from "../Price";
+import { useCartStore } from "@/stores/cart";
 
 interface Props {
   id: string;
@@ -16,7 +17,7 @@ interface Props {
   price: number;
   imageSizes: string;
   wishlist: boolean;
-  salePercentage?: number;
+  priceDiscount?: number;
   onToggleWishlist?: () => void;
 }
 
@@ -29,9 +30,11 @@ export default function ProductCard(props: Props) {
     price,
     imageSizes,
     wishlist,
-    salePercentage,
+    priceDiscount,
     onToggleWishlist,
   } = props;
+
+  const addToCart = useCartStore((state) => state.addToCart);
 
   const tooltipText = wishlist ? "Remove from Wishlist" : "Add to Wishlist";
 
@@ -53,14 +56,31 @@ export default function ProductCard(props: Props) {
       </Link>
       <Price
         price={price}
-        salePercentage={salePercentage}
+        priceDiscount={priceDiscount}
         className={styles.price}
       />
-      <Button className={styles.buyNowButton}>Add to Cart</Button>
+      <Button
+        className={styles.buyNowButton}
+        onClick={() =>
+          addToCart({
+            id,
+            slug,
+            image,
+            title,
+            price,
+            priceDiscount,
+            quantity: 1,
+          })
+        }
+      >
+        Add to Cart
+      </Button>
       <Tooltip position="top" text={tooltipText}>
         <button
           aria-label={tooltipText}
-          className={styles.wishlistButton}
+          className={`${styles.wishlistButton} ${
+            wishlist ? styles.active : ""
+          }`}
           onClick={() => onToggleWishlist && onToggleWishlist()}
         >
           {wishlist ? (

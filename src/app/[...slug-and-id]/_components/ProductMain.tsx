@@ -11,12 +11,12 @@ interface Props {
   images: string[];
   title: string;
   price: number;
-  salePercentage?: number;
+  priceDiscount?: number;
   description: string;
 }
 
 export default function ProductMain(props: Props) {
-  const { images, title, price, salePercentage, description } = props;
+  const { images, title, price, priceDiscount, description } = props;
 
   const [activeImage, setActiveImage] = useState(0);
 
@@ -56,7 +56,7 @@ export default function ProductMain(props: Props) {
         <h1 className={styles.infoHeading}>{title}</h1>
         <Price
           price={price}
-          salePercentage={salePercentage}
+          priceDiscount={priceDiscount}
           className={styles.infoPrice}
         />
         <div className={styles.infoVariants}>

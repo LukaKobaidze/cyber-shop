@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./global.scss";
 import Footer from "@/components/Footer";
 import { ViewportContextProvider } from "@/context/viewport.context";
+import { CartStoreProvider } from "@/stores/cart";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ViewportContextProvider>
-          <Header />
-          <main className="main">{children}</main>
-          <Footer />
+          <CartStoreProvider>
+            <Header />
+            <main className="main">{children}</main>
+            <Footer />
+          </CartStoreProvider>
         </ViewportContextProvider>
       </body>
     </html>

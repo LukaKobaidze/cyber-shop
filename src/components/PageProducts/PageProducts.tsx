@@ -36,8 +36,8 @@ export default function PageProducts(props: Props) {
               title={product.title}
               image={product.image}
               price={product.price}
-              salePercentage={product.salePercentage}
-              wishlist={false}
+              priceDiscount={product.priceDiscount}
+              wishlist={true}
               imageSizes="20vw"
             />
           ))}
