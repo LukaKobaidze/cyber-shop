@@ -15,7 +15,6 @@ type Props = (
 export default function Button(props: Props) {
   if (props.asLink) {
     const { variant = 1, className, children, ...restProps } = props;
-
     return (
       <Link
         className={`${styles.button} ${styles[`button--${variant}`]} ${

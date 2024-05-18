@@ -2,9 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   min-height: 48px;
-  margin-top: 48px;
+  margin-bottom: 2rem;
   
 
   .buttonWrapper{
@@ -45,5 +46,11 @@
       linear-gradient(to right, #ffffff, #000000 69%, #ffffff) border-box; 
       position: absolute;
     }
+  }
+  p{
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    margin-top: 8px;
   }
 }

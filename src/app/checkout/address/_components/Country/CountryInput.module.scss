@@ -1,0 +1,106 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 48%;
+}
+.countryInput{
+  width: 100%;
+  margin-top: 1rem;
+  position: relative; 
+
+  input {
+    width: 100%;
+    padding: .8rem 1rem;
+    padding-top: 1rem;
+    font-weight: lighter;
+    background-color: white;
+    border-radius: 0.575rem;
+    transition: 0.3s;
+    outline: none;
+    font-size: 1rem;
+    border: 1px solid #B2B2B2;
+    font-weight: 500;
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    &:focus{
+      border: 1px solid black;
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      transform: scale(0.75) translateY(-3.1rem);
+      font-weight: 600;
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 1rem;
+    margin-top: .8rem;
+    font-size: 1rem;
+    transition: all 0.15s;
+    transform: translateY(-0.75rem);
+    top: 0.6125rem;
+    z-index: 10;
+    transform-origin: 0;
+    pointer-events: none;
+    background-color: white;
+    padding: 0 .3rem;
+    line-height: 1.85rem;
+  }
+
+  .labelFilled {
+    transform: scale(0.75) translateY(-2rem);
+    font-weight: 400;
+    color: #B2B2B2;
+  }
+
+  .required{
+    position: absolute;
+    right: -3px;
+    top: -3px;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    font-size: 8px;
+    font-weight: 600;
+    padding-bottom: 2px;
+  }
+}
+.menu{
+  position: absolute;
+  width: 100%;
+  padding: .2rem;
+  background-color: white;
+  border: 1px solid rgba($color: #000000, $alpha: 0.5);
+  border-radius: .2rem;
+  top: 4rem;
+  z-index: 20;
+  
+  li{
+    width: 100%;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: .1s;
+    cursor: pointer;
+
+    &:hover{
+      background-color: black;
+      color: white;
+    }
+  }
+}

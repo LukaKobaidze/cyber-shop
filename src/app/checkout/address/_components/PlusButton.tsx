@@ -1,18 +1,22 @@
+'use client'
 import styles from './PlusButton.module.scss'
 
 interface Props {
-  
+  showAddressForm: boolean;
+  setShowAddressForm: (show: boolean)=> void;
 }
 
 export default function PlusButton(props: Props) {
+  const {showAddressForm, setShowAddressForm} = props
+
   return (
     <div className={`contentWrapper ${styles.container}`}>
       <div className={styles.buttonWrapper}>
-        <button>+</button>
+        <button onClick={()=> setShowAddressForm(!showAddressForm)}>{showAddressForm ? '-' : '+'}</button>
         <span></span>
       </div>
       
-      <p></p>
+      <p>Add New Address</p>
     </div>
   )
 }

@@ -1,0 +1,122 @@
+.container {
+  margin-bottom: 1rem;
+  height: 0px;
+  border-radius: 7px;
+  transition: all 0.3s;
+  opacity: 0;
+  padding: 2rem;
+}
+.container.active {
+  height: 500px;
+  opacity: 1;
+  border: 1px solid black;
+  margin: 2rem;
+}
+.first {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+
+  .firstInput {
+    width: 48%;
+  }
+  .addressOptions{
+    max-width: 48%;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    padding-left: 2rem;
+    align-items: center;
+    padding-top: 1rem;
+
+    h4{
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .optionBox{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 1rem;
+
+      input{
+        display: none;
+      }
+      span{
+        padding: .5rem 1rem;
+        border: 1px solid black;
+        margin-left: .5rem;
+        cursor: pointer;
+        border-radius: .2rem;
+        user-select: none;
+        transition: .2s;
+        font-size: .8rem;
+
+        &:hover{
+          background-color: rgb(61, 61, 61);
+          color: white;
+        }
+
+        &.active{
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+}
+.second{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+
+  .secondInput{
+    width: 48%;
+  }
+}
+.third{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+
+  .thirdInput{
+    width: 48%;
+  }
+}
+.fourth{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+
+  .fourthInput{
+    width: 48%;
+  }
+}
+.fifth{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+
+  .fifthInput{
+    width: 48%;
+  }
+}
+.submitButton{
+  margin-top: 1rem;
+}
