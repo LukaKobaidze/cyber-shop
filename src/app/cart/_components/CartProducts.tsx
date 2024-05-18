@@ -19,10 +19,14 @@ export default function CartProducts(props: Props) {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Shopping Cart</h1>
-      <span className={styles.amountItemsText}>
-        {productsLength ? `(${productsLength} item${productsLength === 1 ? "" : "s"})` : ""}
-      </span>
+      <div className={styles.headingWrapper}>
+        <h1 className={styles.heading}>Shopping Cart</h1>
+        {!!productsLength && (
+          <span className={styles.productsLength}>
+            {`(${productsLength} item${productsLength === 1 ? "" : "s"})`}
+          </span>
+        )}
+      </div>
 
       {(Object.keys(products) as (keyof typeof products)[])
         .sort(

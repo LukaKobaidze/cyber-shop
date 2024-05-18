@@ -2,16 +2,22 @@
   margin-right: 3em;
 }
 
+.headingWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5em;
+}
+
 .heading {
   font-size: 1.5em;
 }
 
-.amountItemsText {
+.productsLength {
   display: block;
-  font-size: 1.125em;
+  font-size: 1em;
   font-weight: 500;
-  margin-top: 0.3em;
-  margin-bottom: 2em;
+  margin-left: 0.6em;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .product {

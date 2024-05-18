@@ -16,15 +16,18 @@ import Tooltip from "../Tooltip";
 import { usePathname } from "next/navigation";
 import { useCartStore } from "@/stores/cart";
 import Badge from "../Badge";
+import { useWishlistStore } from "@/stores/wishlist";
 
 interface Props {}
 
 export default function Header(props: Props) {
   const pathname = usePathname();
 
-  const products = useCartStore((state) => state.products);
+  const cartProducts = useCartStore((state) => state.products);
+  const wishlistProducts = useWishlistStore((state) => state.products);
 
-  const cartSize = Object.keys(products).length;
+  const cartProductsLength = Object.keys(cartProducts).length;
+  const wishlistProductLength = Object.keys(wishlistProducts).length;
 
   return (
     <header className={styles.header}>
@@ -32,7 +35,7 @@ export default function Header(props: Props) {
         <Link href="/" className={styles.logo}>
           <Image src="/logo.png" alt="" width={65} height={23} />
         </Link>
-        <Searchbar classNameContainer={styles.searchbar} />
+        <Searchbar placeholder="Search" classNameContainer={styles.searchbar} />
         <Navigation />
         <div className={styles.lastGroup}>
           <Tooltip position="bottom" text="Wishlist" offset={8}>
@@ -41,6 +44,9 @@ export default function Header(props: Props) {
               aria-label="wishlist"
               className={styles.lastGroupItem}
             >
+              {!!wishlistProductLength && (
+                <Badge>{wishlistProductLength}</Badge>
+              )}
               {pathname === "/wishlist" ? (
                 <IconWishlistFilled className={styles.lastGroupItemIcon} />
               ) : (
@@ -54,7 +60,7 @@ export default function Header(props: Props) {
               aria-label="Cart"
               className={styles.lastGroupItem}
             >
-              {!!cartSize && <Badge>{cartSize}</Badge>}
+              {!!cartProductsLength && <Badge>{cartProductsLength}</Badge>}
               {pathname === "/cart" ? (
                 <IconCartFilled className={styles.lastGroupItemIcon} />
               ) : (

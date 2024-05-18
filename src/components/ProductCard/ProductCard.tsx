@@ -8,6 +8,7 @@ import Link from "next/link";
 import styles from "./ProductCard.module.scss";
 import Price from "../Price";
 import { useCartStore } from "@/stores/cart";
+import { useWishlistStore } from "@/stores/wishlist";
 
 interface Props {
   id: string;
@@ -16,27 +17,23 @@ interface Props {
   title: string;
   price: number;
   imageSizes: string;
-  wishlist: boolean;
   priceDiscount?: number;
-  onToggleWishlist?: () => void;
 }
 
 export default function ProductCard(props: Props) {
-  const {
-    id,
-    slug,
-    image,
-    title,
-    price,
-    imageSizes,
-    wishlist,
-    priceDiscount,
-    onToggleWishlist,
-  } = props;
+  const { id, slug, image, title, price, imageSizes, priceDiscount } = props;
+
+  const wishlistProducts = useWishlistStore((state) => state.products);
 
   const addToCart = useCartStore((state) => state.addToCart);
+  const addToWishlist = useWishlistStore((state) => state.addToWishlist);
+  const removeFromWishlist = useWishlistStore(
+    (state) => state.removeFromWishlist
+  );
 
-  const tooltipText = wishlist ? "Remove from Wishlist" : "Add to Wishlist";
+  const isWishlist = wishlistProducts.hasOwnProperty(id);
+
+  const tooltipText = isWishlist ? "Remove from Wishlist" : "Add to Wishlist";
 
   const href = "/" + slug + "/" + id;
 
@@ -79,11 +76,15 @@ export default function ProductCard(props: Props) {
         <button
           aria-label={tooltipText}
           className={`${styles.wishlistButton} ${
-            wishlist ? styles.active : ""
+            isWishlist ? styles.active : ""
           }`}
-          onClick={() => onToggleWishlist && onToggleWishlist()}
+          onClick={() =>
+            isWishlist
+              ? removeFromWishlist(id)
+              : addToWishlist({ id, image, price, priceDiscount, slug, title })
+          }
         >
-          {wishlist ? (
+          {isWishlist ? (
             <IconWishlistFilled className={styles.wishlistButtonIcon} />
           ) : (
             <IconWishlist className={styles.wishlistButtonIcon} />

@@ -37,6 +37,13 @@ export default function CatalogCategoryPage({ params, searchParams }: Props) {
         products={getProducts(currentPage)}
         totalPages={totalPages}
         totalProducts={fakeProducts.length}
+        sortOptions={[
+          { label: "Relevance", value: "relevance" },
+          { label: "Price (Low to High)", value: "price-increasing" },
+          { label: "Price (High to Low)", value: "price-decreasing" },
+          { label: "Rating (Low to High)", value: "rating-increasing" },
+          { label: "Rating (High to Low)", value: "rating-decreasing" },
+        ]}
       />
     </div>
   );
