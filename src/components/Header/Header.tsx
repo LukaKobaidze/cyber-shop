@@ -23,6 +23,8 @@ export default function Header(props: Props) {
 
   const products = useCartStore((state) => state.products);
 
+  const cartSize = Object.keys(products).length;
+
   return (
     <header className={styles.header}>
       <div className={`contentWrapper ${styles.contentWrapper}`}>
@@ -37,7 +39,7 @@ export default function Header(props: Props) {
               href="/wishlist"
               aria-label="wishlist"
               className={styles.lastGroupItem}
-              >
+            >
               {pathname === "/wishlist" ? (
                 <IconWishlistFilled className={styles.lastGroupItemIcon} />
               ) : (
@@ -50,8 +52,10 @@ export default function Header(props: Props) {
               href="/cart"
               aria-label="Cart"
               className={styles.lastGroupItem}
-              >
-                <span className={styles.lastGroupItemCounter}>{Object.keys(products).length}</span>
+            >
+              {!!cartSize && (
+                <span className={styles.lastGroupItemCounter}>{cartSize}</span>
+              )}
               {pathname === "/cart" ? (
                 <IconCartFilled className={styles.lastGroupItemIcon} />
               ) : (
@@ -64,7 +68,7 @@ export default function Header(props: Props) {
               href="/create-account"
               aria-label="Sign In"
               className={styles.lastGroupItem}
-              >
+            >
               <IconUser className={styles.lastGroupItemIcon} />
             </Link>
           </Tooltip>
