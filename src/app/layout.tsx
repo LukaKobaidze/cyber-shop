@@ -5,6 +5,7 @@ import "./global.scss";
 import Footer from "@/components/Footer";
 import { ViewportContextProvider } from "@/context/viewport.context";
 import { CartStoreProvider } from "@/stores/cart";
+import { WishlistStoreProvider } from "@/stores/wishlist";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,9 +24,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <ViewportContextProvider>
           <CartStoreProvider>
-            <Header />
-            <main className="main">{children}</main>
-            <Footer />
+            <WishlistStoreProvider>
+              <Header />
+              <main className="main">{children}</main>
+              <Footer />
+            </WishlistStoreProvider>
           </CartStoreProvider>
         </ViewportContextProvider>
       </body>

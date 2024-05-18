@@ -15,6 +15,7 @@ import styles from "./Header.module.scss";
 import Tooltip from "../Tooltip";
 import { usePathname } from "next/navigation";
 import { useCartStore } from "@/stores/cart";
+import Badge from "../Badge";
 
 interface Props {}
 
@@ -53,9 +54,7 @@ export default function Header(props: Props) {
               aria-label="Cart"
               className={styles.lastGroupItem}
             >
-              {!!cartSize && (
-                <span className={styles.lastGroupItemCounter}>{cartSize}</span>
-              )}
+              {!!cartSize && <Badge>{cartSize}</Badge>}
               {pathname === "/cart" ? (
                 <IconCartFilled className={styles.lastGroupItemIcon} />
               ) : (

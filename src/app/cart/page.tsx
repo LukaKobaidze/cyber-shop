@@ -5,10 +5,7 @@ import styles from "./page.module.scss";
 export default function CartPage() {
   return (
     <div className={`contentWrapper ${styles.container}`}>
-      <div className={styles.products}>
-        <h1 className={styles.heading}>Shopping Cart</h1>
-        <CartProducts />
-      </div>
+      <CartProducts />
       <OrderSummary />
     </div>
   );

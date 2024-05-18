@@ -8,14 +8,22 @@ import { IconClose } from "@/icons";
 import Tooltip from "@/components/Tooltip";
 import styles from "./CartProducts.module.scss";
 import Link from "next/link";
+import Paragraph from "@/components/Paragraph";
 
 interface Props {}
 
 export default function CartProducts(props: Props) {
   const products = useCartStore((state) => state.products);
 
+  const productsLength = Object.keys(products).length;
+
   return (
     <div className={styles.container}>
+      <h1 className={styles.heading}>Shopping Cart</h1>
+      <span className={styles.amountItemsText}>
+        {productsLength ? `(${productsLength} item${productsLength === 1 ? "" : "s"})` : ""}
+      </span>
+
       {(Object.keys(products) as (keyof typeof products)[])
         .sort(
           (a, b) =>
@@ -48,7 +56,7 @@ export default function CartProducts(props: Props) {
                 priceDiscount={priceDiscount}
                 className={styles.productPrice}
               />
-              <Tooltip position="bottom" text="Remove Product">
+              <Tooltip position="top" text="Remove Product" offset={10}>
                 <button
                   className={styles.productRemove}
                   aria-label="Remove Product"
