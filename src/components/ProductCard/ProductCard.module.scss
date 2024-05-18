@@ -26,8 +26,30 @@ img.image {
   margin-top: 1em;
 }
 
-.buyNowButton {
+.addToCartButton {
   margin-top: 1.5em;
+}
+
+.quantityInCart {
+  margin-top: 0.5em;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  font-size: 0.9375em;
+
+  &Button {
+    color: inherit;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 500;
+    font-size: inherit;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    
+    &:hover,
+    &:focus-visible {
+      color: rgba(0, 0, 0, 1);
+      text-decoration: underline;
+    }
+  }
 }
 
 .wishlistButton {

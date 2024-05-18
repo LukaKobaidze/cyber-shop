@@ -43,7 +43,12 @@ export const createCartStore = (argInitState: CartState = initialState) => {
             ...state,
             products: {
               ...state.products,
-              [id]: { ...productData, dateAdded: new Date() },
+              [id]: {
+                ...productData,
+                dateAdded: state.products[id]?.dateAdded || new Date(),
+                quantity:
+                  (state.products[id]?.quantity || 0) + productData.quantity,
+              },
             },
           }));
         },

@@ -23,17 +23,20 @@ interface Props {
 export default function ProductCard(props: Props) {
   const { id, slug, image, title, price, imageSizes, priceDiscount } = props;
 
-  const wishlistProducts = useWishlistStore((state) => state.products);
-
+  const cartProducts = useCartStore((state) => state.products);
   const addToCart = useCartStore((state) => state.addToCart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+
+  const wishlistProducts = useWishlistStore((state) => state.products);
   const addToWishlist = useWishlistStore((state) => state.addToWishlist);
   const removeFromWishlist = useWishlistStore(
     (state) => state.removeFromWishlist
   );
 
-  const isWishlist = wishlistProducts.hasOwnProperty(id);
+  const quantityInCart = cartProducts[id]?.quantity || 0;
+  const isInWishlist = wishlistProducts.hasOwnProperty(id);
 
-  const tooltipText = isWishlist ? "Remove from Wishlist" : "Add to Wishlist";
+  const tooltipText = isInWishlist ? "Remove from Wishlist" : "Add to Wishlist";
 
   const href = "/" + slug + "/" + id;
 
@@ -57,7 +60,7 @@ export default function ProductCard(props: Props) {
         className={styles.price}
       />
       <Button
-        className={styles.buyNowButton}
+        className={styles.addToCartButton}
         onClick={() =>
           addToCart({
             id,
@@ -72,19 +75,31 @@ export default function ProductCard(props: Props) {
       >
         Add to Cart
       </Button>
+      {!!quantityInCart && (
+        <div className={styles.quantityInCart}>
+          <span>{quantityInCart} in cart - </span>
+          <button
+            className={styles.quantityInCartButton}
+            onClick={() => removeFromCart(id)}
+          >
+            Remove
+          </button>
+        </div>
+      )}
+
       <Tooltip position="top" text={tooltipText}>
         <button
           aria-label={tooltipText}
           className={`${styles.wishlistButton} ${
-            isWishlist ? styles.active : ""
+            isInWishlist ? styles.active : ""
           }`}
           onClick={() =>
-            isWishlist
+            isInWishlist
               ? removeFromWishlist(id)
               : addToWishlist({ id, image, price, priceDiscount, slug, title })
           }
         >
-          {isWishlist ? (
+          {isInWishlist ? (
             <IconWishlistFilled className={styles.wishlistButtonIcon} />
           ) : (
             <IconWishlist className={styles.wishlistButtonIcon} />
