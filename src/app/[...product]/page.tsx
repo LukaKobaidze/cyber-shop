@@ -8,12 +8,12 @@ import RelatedProducts from "./_components/RelatedProducts";
 
 interface Props {
   params: {
-    "slug-and-id": [string, string];
+    product: [string, string];
   };
 }
 
 export default function ProductPage({ params }: Props) {
-  const [slug, id] = params["slug-and-id"];
+  const [slug, id] = params.product;
 
   const data = getProductPageData(id);
 
