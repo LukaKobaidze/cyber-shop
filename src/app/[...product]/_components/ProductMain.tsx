@@ -6,6 +6,7 @@ import Button from "@/components/Button";
 import Image from "next/image";
 import { useState } from "react";
 import { IconDelivery, IconGuaranteed, IconStock } from "@/icons";
+import Counter from "@/components/Counter";
 
 interface Props {
   images: string[];
@@ -21,7 +22,7 @@ export default function ProductMain(props: Props) {
   const [activeImage, setActiveImage] = useState(0);
 
   return (
-    <div className={`contentWrapper ${styles.container}`}>
+    <div className={`content-wrapper ${styles.container}`}>
       <div className={styles.images}>
         <div className={styles.imagesAside}>
           {images.map((image, imageIndex) => (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchCountry } from "./FetchCountry";
+import { fetchCountry } from "./fetchCountry";
 import styles from "./CountryInput.module.scss";
 import Tooltip from "@/components/Tooltip";
 
@@ -14,12 +14,12 @@ const CountryInput: React.FC = () => {
         const fetchedCountries = await fetchCountry(searchTerm);
         setCountries(fetchedCountries);
 
-        if(fetchedCountries.length === 0){
-          setMenu(false)
+        if (fetchedCountries.length === 0) {
+          setMenu(false);
         }
       } else {
         setCountries([]);
-        setMenu(false)
+        setMenu(false);
       }
     };
     fetchData();
@@ -34,7 +34,7 @@ const CountryInput: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
     setSearchTerm(
-      inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase()
+      inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase(),
     );
 
     if (inputValue.length > 2) {
@@ -61,16 +61,15 @@ const CountryInput: React.FC = () => {
 
       {menu && (
         <div className={styles.menu}>
-
           <ul>
             {countries.slice(0, 7).map(
               (
-                country // Limit to 2 results
+                country, // Limit to 2 results
               ) => (
                 <li key={country} onClick={() => handleCountryClick(country)}>
                   {country}
                 </li>
-              )
+              ),
             )}
           </ul>
         </div>

@@ -1,116 +1,108 @@
-.container{
+.container {
   display: flex;
   justify-content: center;
-  min-height: 592px;
 }
-.contentWrapper{
-  padding: 1rem;
+.contentWrapper {
   display: flex;
   flex-direction: column;
-  height: 592px;
   width: 100%;
-  margin-top: 48px;
 }
-.title{
+.title {
   font-weight: 600;
   font-size: 20px;
 }
-.content{
+.content {
   width: 100%;
   min-height: 200px;
   margin-top: 2rem;
 }
 
-.shippingOption{
+.shippingOption {
   display: flex;
   justify-content: space-between;
   padding: 24px;
   border-radius: 11px;
-  border: 1px solid #D1D1D8;
+  border: 1px solid #d1d1d8;
   margin-bottom: 1rem;
   justify-content: space-between;
   cursor: pointer;
 
-  .left{
+  .left {
     display: flex;
     align-items: center;
 
-    input[type="radio"]{
+    input[type="radio"] {
       width: 24px;
       height: 24px;
       accent-color: black;
     }
 
-    h4{
+    h4 {
       font-size: 16px;
-      color: #A2A3B1;
+      color: #a2a3b1;
       font-weight: 500;
       margin-left: 1rem;
     }
-    p{
+    p {
       font-size: 16px;
       font-weight: 400;
       margin-left: 1rem;
-      color: #A2A3B1;
+      color: #a2a3b1;
     }
   }
-  .right{
+  .right {
     display: flex;
     align-items: center;
     position: relative;
 
-    p{
+    p {
       font-size: 16px;
       font-weight: 500;
       display: flex;
       margin-right: 4px;
       position: relative;
-      color: #A2A3B1;
+      color: #a2a3b1;
     }
-    svg{
+    svg {
       position: absolute;
-      right: .2rem;
+      right: 0.2rem;
       pointer-events: none;
-      stroke: #A2A3B1 !important;
-      
-      
+      stroke: #a2a3b1 !important;
     }
   }
 }
-.shippingOption.selected{
+.shippingOption.selected {
   border: 1px solid black;
 
-  p{
+  p {
     color: black;
   }
-  h4{
+  h4 {
     color: black;
   }
 
-  svg{
+  svg {
     color: black;
     stroke: black !important;
   }
 
-  .right{
-
-    p{
+  .right {
+    p {
       color: black;
     }
   }
 }
-.bottomContainer{
-  padding: 1rem;
+.bottomContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: auto;
+  margin-top: 2em;
 
-  .buttonBox{
+  .buttonBox {
     display: flex;
     align-items: center;
-    
-    button{
+
+    button {
       width: 205px;
       margin-left: 1rem;
     }

@@ -7,7 +7,7 @@ interface Props {}
 
 export default function RelatedProducts(props: Props) {
   return (
-    <div className={`contentWrapper ${styles.container}`}>
+    <div className={`content-wrapper ${styles.container}`}>
       <h2 className={styles.heading}>Related Products</h2>
       <ProductsGrid>
         {productsData.slice(0, 4).map((product) => (

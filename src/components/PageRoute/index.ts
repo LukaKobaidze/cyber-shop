@@ -1,4 +1,4 @@
-import PageRoute from './PageRoute';
+import PageRoute from "./PageRoute";
 
-export * from './PageRoute';
+export * from "./PageRoute";
 export default PageRoute;

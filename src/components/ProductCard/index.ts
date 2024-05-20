@@ -1,4 +1,4 @@
-import ProductCard from './ProductCard';
+import ProductCard from "./ProductCard";
 
-export * from './ProductCard';
+export * from "./ProductCard";
 export default ProductCard;

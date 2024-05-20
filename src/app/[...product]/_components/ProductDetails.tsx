@@ -14,7 +14,7 @@ export default function ProductDetails(props: Props) {
 
   return (
     <div className={styles.container}>
-      <div className={`contentWrapper ${styles.contentWrapper}`}>
+      <div className={`content-wrapper ${styles.contentWrapper}`}>
         <h2 className={styles.mainHeading}>Details</h2>
         <Paragraph className={styles.description}>{description}</Paragraph>
         {details?.map(({ title, list }) => (

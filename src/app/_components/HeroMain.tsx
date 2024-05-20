@@ -1,14 +1,14 @@
-import Button from '@/components/Button';
-import styles from './HeroMain.module.scss';
-import Paragraph from '@/components/Paragraph';
-import Image from 'next/image';
+import Button from "@/components/Button";
+import styles from "./HeroMain.module.scss";
+import Paragraph from "@/components/Paragraph";
+import Image from "next/image";
 
 interface Props {}
 
 export default function HeroMain(props: Props) {
   return (
     <div className={styles.container}>
-      <div className={`contentWrapper ${styles.contentWrapper}`}>
+      <div className={`content-wrapper ${styles.contentWrapper}`}>
         <div>
           <span className={styles.subHeading}>Pro.Beyond.</span>
           <h1 className={styles.heading}>

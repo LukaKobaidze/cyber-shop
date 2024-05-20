@@ -1,7 +1,7 @@
-'use client'
-import { IconLocation, IconPayment, IconShipping } from '@/icons';
-import styles from './Steps.module.scss';
-import { usePathname } from 'next/navigation';
+"use client";
+import { IconLocation, IconPayment, IconShipping } from "@/icons";
+import styles from "./Steps.module.scss";
+import { usePathname } from "next/navigation";
 
 interface Props {}
 
@@ -12,8 +12,10 @@ export default function Steps(props: Props) {
 
   return (
     <div className={styles.container}>
-      <div className={`contentWrapper ${styles.contentWrapper}`}>
-        <div className={`${styles.icon} ${isActive('checkout/address') ? styles.active : ''}`}>
+      <div className={`content-wrapper ${styles.contentWrapper}`}>
+        <div
+          className={`${styles.icon} ${isActive("checkout/address") ? styles.active : ""}`}
+        >
           <div className={styles.holder}>
             <IconLocation />
           </div>
@@ -23,7 +25,9 @@ export default function Steps(props: Props) {
           </div>
         </div>
 
-        <div className={`${styles.icon} ${isActive('checkout/shipping') ? styles.active : ''}`}>
+        <div
+          className={`${styles.icon} ${isActive("checkout/shipping") ? styles.active : ""}`}
+        >
           <div className={styles.holder}>
             <IconShipping />
           </div>
@@ -33,7 +37,9 @@ export default function Steps(props: Props) {
           </div>
         </div>
 
-        <div className={`${styles.icon} ${isActive('checkout/payment') ? styles.active : ''}`}>
+        <div
+          className={`${styles.icon} ${isActive("checkout/payment") ? styles.active : ""}`}
+        >
           <div className={styles.holder}>
             <IconPayment />
           </div>

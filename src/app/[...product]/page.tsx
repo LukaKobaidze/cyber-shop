@@ -19,7 +19,7 @@ export default function ProductPage({ params }: Props) {
 
   return (
     <div>
-      <div className="contentWrapper">
+      <div className="content-wrapper">
         <PageRoute routes={["catalog", data.category, data.brand, slug]} />
       </div>
       <ProductMain

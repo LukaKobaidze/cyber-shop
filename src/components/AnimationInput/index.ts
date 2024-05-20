@@ -1,4 +1,4 @@
-import AnimationInput from './AnimationInput';
+import AnimationInput from "./AnimationInput";
 
-export * from './AnimationInput';
+export * from "./AnimationInput";
 export default AnimationInput;

@@ -23,12 +23,12 @@ export default function ProductReviews(props: Props) {
 
       return count;
     },
-    [0, 0]
+    [0, 0],
   );
   const reviewAverage = (totalStars / totalReviews).toFixed(1);
 
   return (
-    <div className={`contentWrapper ${styles.container}`}>
+    <div className={`content-wrapper ${styles.container}`}>
       <h2 className={styles.heading}>Reviews</h2>
       <div className={styles.detailsWrapper}>
         <div className={styles.reviewAverage}>

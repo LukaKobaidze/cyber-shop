@@ -20,7 +20,7 @@ type WishlistActions = {
   addToWishlist: (
     product: Omit<WishlistState["products"][number], "dateAdded"> & {
       id: string;
-    }
+    },
   ) => void;
   removeFromWishlist: (id: string) => void;
 };
@@ -32,7 +32,7 @@ const initialState: WishlistState = {
 };
 
 export const createWishlistStore = (
-  argInitState: WishlistState = initialState
+  argInitState: WishlistState = initialState,
 ) => {
   return createStore<WishlistStore>()(
     persist(
@@ -58,7 +58,7 @@ export const createWishlistStore = (
           }));
         },
       }),
-      { name: "wishlist", storage: createJSONStorage(() => localStorage) }
-    )
+      { name: "wishlist", storage: createJSONStorage(() => localStorage) },
+    ),
   );
 };

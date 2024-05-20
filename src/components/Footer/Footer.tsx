@@ -9,7 +9,7 @@ interface Props {}
 export default function Footer(props: Props) {
   return (
     <footer className={styles.footer}>
-      <div className={`contentWrapper ${styles.contentWrapper}`}>
+      <div className={`content-wrapper ${styles.contentWrapper}`}>
         <div className={styles.innerContent}>
           <div className={styles.firstContainer}>
             <Link href="/" className={styles.logo}>
