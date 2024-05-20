@@ -6,10 +6,11 @@ import { InputHTMLAttributes } from "react";
 interface AnimationInputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: string;
   label: string;
+  maxLength?: number
 }
 
 export default function AnimationInput(props: AnimationInputProps) {
-  const { className, type, label, onChange, ...restProps } = props;
+  const { className, type, label, onChange, maxLength, ...restProps } = props;
   // input value state
   const [inputValue, setInputValue] = useState("");
 
@@ -31,6 +32,7 @@ export default function AnimationInput(props: AnimationInputProps) {
         onChange={handleChange}
         placeholder=" "
         {...restProps}
+        maxLength={maxLength}
       />
       <label className={`${inputValue.length > 0 ? styles.labelFilled : ""}`}>
         {label}

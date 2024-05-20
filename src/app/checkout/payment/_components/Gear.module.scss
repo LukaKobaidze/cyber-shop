@@ -1,0 +1,147 @@
+.wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+  font-family: 'Quantico', sans-serif;
+  user-select: none;
+
+  h1{
+    font-weight: 400;
+    font-size: 1.5rem;
+    max-width: 230px;
+    margin-left: 1rem;
+    font-weight: 600;
+  }
+}
+.gears{
+  display: inline-block;
+}
+.gears:first-child{
+  margin-right: 3%;
+}
+.gears-container{
+    width:150px; 
+    height: 150px;
+    font-size:24px;
+    padding: 9%;
+    position: relative; 
+    margin: 0px auto;
+}
+.gear-rotate{
+	width: 2em;
+	height: 2em;
+	background: black;
+	border-radius: 1em;
+	-webkit-animation: 1s gear-rotate linear infinite;
+	-moz-animation: 1s gear-rotate linear infinite;
+	animation: 1s gear-rotate linear infinite;
+}
+.gear-rotate-left{
+  width: 2em;
+	height: 2em;
+  margin-left: 2.3rem;
+  margin-top: -12px;
+	background: black;
+	border-radius: 1em;
+  -webkit-animation: 1s gear-rotate-left linear infinite;
+  -moz-animation: 1s gear-rotate-left linear infinite;
+  animation: 1s gear-rotate-left linear infinite;
+}
+
+.gear-rotate::before, .gear-rotate-left::before {
+	width: 2.8em;
+	height: 2.8em;
+	background: 
+    -webkit-linear-gradient(0deg,transparent 39%,black 39%,black 61%, transparent 61%),
+    -webkit-linear-gradient(60deg,transparent 42%,black 42%,black 58%, transparent 58%),
+    -webkit-linear-gradient(120deg,transparent 42%,black 42%,black 58%, transparent 58%);
+	background: 
+    -moz-linear-gradient(0deg,transparent 39%,black 39%,#47EC19 61%, transparent 61%),
+    -moz-linear-gradient(60deg,transparent 42%,black 42%,black 58%, transparent 58%),
+    -moz-linear-gradient(120deg,transparent 42%,black 42%,black 58%, transparent 58%);
+	background: 
+    -o-linear-gradient(0deg,transparent 39%,black 39%,black 61%, transparent 61%),
+    -o-linear-gradient(60deg,transparent 42%,black 42%,black 58%, transparent 58%),
+    -o-linear-gradient(120deg,transparent 42%,#47EC19 42%,black 58%, transparent 58%);
+	background: -ms-linear-gradient(0deg,transparent 39%,black 39%,black 61%, transparent 61%),-ms-linear-gradient(60deg,transparent 42%,black 42%,black 58%, transparent 58%),-ms-linear-gradient(120deg,transparent 42%,black 42%,black 58%, transparent 58%);
+	background: 
+      linear-gradient(0deg,transparent 39%,black 39%,black 61%, transparent 61%),
+    linear-gradient(60deg,transparent 42%,black 42%,black 58%, transparent 58%),
+    linear-gradient(120deg,transparent 42%,black 42%,black 58%, transparent 58%);
+	position: absolute;
+	content:"";
+	top: -.4em;
+	left: -.4em;
+	border-radius:1.4em;
+}
+.gear-rotate::after, .gear-rotate-left::after {
+	width: 1em;
+	height: 1em;
+	background: white;
+	position: absolute;
+	content:"";
+	top: .5em;
+	left: .5em;
+	border-radius: .5em;
+}
+
+/*
+ * Keyframe Animations 
+ */ 
+
+@-webkit-keyframes gear-rotate {
+  0% { 
+    -webkit-transform: rotate(0deg);
+  }
+  100% { 
+    -webkit-transform: rotate(-180deg); 
+  }
+}
+
+@-moz-keyframes gear-rotate {
+  0% { 
+    transform: rotate(0deg);
+  }
+  100% { 
+    transform: rotate(-180deg); 
+  }
+}
+
+@keyframes gear-rotate {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(-180deg); 
+  }
+}
+
+@-webkit-keyframes gear-rotate-left {
+ 0% {
+   -webkit-transform: rotate(30deg); 
+  }
+  100% {
+    -webkit-transform: rotate(210deg);
+  }
+}
+
+@-moz-keyframes gear-rotate-left {
+ 0% { 
+   -webkit-transform: rotate(30deg); 
+  }
+  100% { 
+    -webkit-transform: rotate(210deg);
+  }
+}
+
+@keyframes gear-rotate-left {
+ 0% { 
+   -webkit-transform: rotate(30deg); 
+  }
+  100% { 
+    -webkit-transform: rotate(210deg);
+  }
+}
