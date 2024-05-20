@@ -2,17 +2,34 @@ import Input from "@/components/Input";
 import styles from "./CreditCard.module.scss";
 import Button from "@/components/Button";
 import { useState } from "react";
+import CreditCardImage from "./CreditCardImage";
 
 interface Props {}
 
 export default function CreditCard(props: Props) {
-  const [cardNumber, setCardNumber] = useState("0000000000000000");
+  const [cardNumber, setCardNumber] = useState("");
+
   const [cardHolder, setCardHolder] = useState("Cardholder");
   const [expireDate, setExpireDate] = useState("Month/Year");
   const [cvv, setCvv] = useState("CVV");
 
-  const handleCardNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCardNumber(e.target.value);
+  const handleCardNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value.length !== 0 && !/^(\d|\s)+$/.test(e.target.value)) {
+      return;
+    }
+
+    let updatedValue = e.target.value.replace(/\s/g, "");
+
+    let i = 4;
+
+    while (i < updatedValue.length) {
+      console.log("updated value before: ", updatedValue);
+      updatedValue = updatedValue.slice(0, i) + " " + updatedValue.slice(i);
+
+      i += 5;
+    }
+
+    setCardNumber(updatedValue);
   };
 
   const handleCardHolder = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,56 +43,19 @@ export default function CreditCard(props: Props) {
     setCvv(e.target.value);
   };
 
-  const formatCardNumber = (number: string) => {
-    return number
-      .replace(/\s+/g, "")
-      .replace(/(.{4})/g, "$1 ")
-      .trim()
-      .split(" ")
-      .map((chunk, index) => <span key={index}>{chunk}</span>);
-  };
   return (
     <div className={styles.container}>
-      <div
-        className={styles.creditCard}
-        style={{ backgroundImage: `url('/credit-card2.png')` }}
-      >
-        <div
-          className={`${styles.creditHolder} ${
-            cardHolder !== "Cardholder" ? styles.active : ""
-          }`}
-        >
-          {cardHolder}
-        </div>
-        <div
-          className={`${styles.creditNumber} ${
-            cardNumber !== "0000000000000000" ? styles.active : ""
-          }`}
-        >
-          {formatCardNumber(cardNumber)}
-        </div>
-        <div
-          className={`${styles.expireDate} ${
-            expireDate !== "Month/Year" ? styles.active : ""
-          }`}
-        >
-          {expireDate}
-        </div>
-        <div className={`${styles.cvv} ${cvv !== 'CVV' ? styles.active : ''}`}>{cvv}</div>
-      </div>
-
+      <CreditCardImage cardNumber={cardNumber} />
       <Input
         placeholder="Cardholder Name"
         onChange={handleCardHolder}
         className={styles.cardHolder}
       />
       <Input
-        onChange={handleCardNumber}
         placeholder="Card Number"
-        addCard
-        maxLength={25}
-        allowNumbers
-        upperCase
+        value={cardNumber}
+        maxLength={19}
+        onChange={handleCardNumberChange}
         className={styles.cardNumber}
       />
 
