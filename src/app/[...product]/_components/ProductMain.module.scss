@@ -94,9 +94,13 @@
   transform: translateY(-50%);
 }
 
+.quantity {
+  margin-top: 2em;
+}
+
 .buttonsWrapper {
   display: flex;
-  margin-top: 2em;
+  margin-top: 1em;
 
   & > * {
     width: 100%;

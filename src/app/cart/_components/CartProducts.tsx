@@ -14,6 +14,7 @@ interface Props {}
 
 export default function CartProducts(props: Props) {
   const products = useCartStore((state) => state.products);
+  const updateQuantity = useCartStore((state) => state.updateQuantity);
 
   const productsLength = Object.keys(products).length;
 
@@ -52,8 +53,8 @@ export default function CartProducts(props: Props) {
               </Link>
               <Counter
                 value={quantity}
-                onDecrement={() => {}}
-                onIncrement={() => {}}
+                min={1}
+                onValueChange={(value) => updateQuantity(id, value)}
               />
               <Price
                 price={price}

@@ -6,6 +6,7 @@ import Button from "@/components/Button";
 import Image from "next/image";
 import { useState } from "react";
 import { IconDelivery, IconGuaranteed, IconStock } from "@/icons";
+import Counter from "@/components/Counter";
 
 interface Props {
   images: string[];
