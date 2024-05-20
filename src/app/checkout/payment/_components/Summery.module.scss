@@ -1,0 +1,149 @@
+.summery{
+  display: flex;
+  flex-direction: column;
+  max-width: 512px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 32px 24px;
+  border: 1px solid #EBEBEB;
+  min-height: 400px;
+
+  .title{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  .itemContainer{
+    width: 100%;
+    min-height: 100px;
+    padding: 10px 5px;
+
+
+    .item{
+      width: 100%;
+      padding: 16px;
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 13px;
+      background-color: #F6F6F6;
+      align-items: center;
+      margin-bottom: 1rem;
+      
+    }
+    .imageTitle{
+      display: flex;
+      align-items: center;
+      max-width: 80%;
+
+      p{
+        margin-left: 1rem;
+      }
+    }
+    .price{
+      font-weight: 700;
+    }
+  }
+  .addressContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+
+    .addressTitle{
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #545454;
+    }
+    .address{
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      margin-bottom: 1rem;
+    }
+    .shipmentTitle{
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: .5rem;
+      color: #545454;
+    }
+    .shipment{
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      margin-bottom: 1rem;
+    }
+  }
+  .priceContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+
+    .subtotal{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+
+      p{
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      h4{
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+    .tax{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      p{
+        color:#545454;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+      h4{
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+    .shipping{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+
+      p{
+        color:#545454;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+      h4{
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+    .total{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+
+      p{
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      h4{
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+  
+}
