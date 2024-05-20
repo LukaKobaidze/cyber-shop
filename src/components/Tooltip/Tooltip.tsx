@@ -126,7 +126,7 @@ export default function Tooltip(props: Props) {
       {React.Children.map(children, (child: any) =>
         React.cloneElement(child, {
           ref: (ref: any) => (childrenRef.current = ref),
-        })
+        }),
       )}
 
       {tooltipStyleVariables &&
@@ -139,7 +139,7 @@ export default function Tooltip(props: Props) {
           >
             {text}
           </div>,
-          document.body
+          document.body,
         )}
     </>
   );

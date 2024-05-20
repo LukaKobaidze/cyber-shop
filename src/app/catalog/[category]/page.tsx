@@ -10,7 +10,7 @@ const totalPages = Math.ceil(totalAmount / pageLimit);
 const getProducts = (currentPage: number) => {
   return fakeProducts.slice(
     pageLimit * (currentPage - 1),
-    pageLimit * (currentPage - 1) + pageLimit
+    pageLimit * (currentPage - 1) + pageLimit,
   );
 };
 
@@ -30,7 +30,7 @@ export default function CatalogCategoryPage({ params, searchParams }: Props) {
   const sort = searchParams?.sort || "relevance";
 
   return (
-    <div className={`contentWrapper ${styles.container}`}>
+    <div className={`content-wrapper ${styles.container}`}>
       <PageRoute routes={["catalog", category]} />
       <PageProducts
         currentPage={currentPage}

@@ -10,7 +10,7 @@ interface Props {}
 
 export default function Discounts(props: Props) {
   return (
-    <div className={`contentWrapper ${styles.container}`}>
+    <div className={`content-wrapper ${styles.container}`}>
       <h2 className={styles.heading}>Discounts up to -50%</h2>
       <ProductsGrid>
         {fakeData.map((product) => (

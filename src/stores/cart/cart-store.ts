@@ -19,7 +19,7 @@ type CartState = {
 
 type CartActions = {
   addToCart: (
-    product: Omit<CartState["products"][number], "dateAdded"> & { id: string }
+    product: Omit<CartState["products"][number], "dateAdded"> & { id: string },
   ) => void;
   updateQuantity: (id: string, quantity: number) => void;
   removeFromCart: (id: string) => void;
@@ -68,7 +68,7 @@ export const createCartStore = (argInitState: CartState = initialState) => {
           }));
         },
       }),
-      { name: "cart", storage: createJSONStorage(() => localStorage) }
-    )
+      { name: "cart", storage: createJSONStorage(() => localStorage) },
+    ),
   );
 };

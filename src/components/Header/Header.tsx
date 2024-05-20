@@ -31,7 +31,7 @@ export default function Header(props: Props) {
 
   return (
     <header className={styles.header}>
-      <div className={`contentWrapper ${styles.contentWrapper}`}>
+      <div className={`content-wrapper ${styles.contentWrapper}`}>
         <Link href="/" className={styles.logo}>
           <Image src="/logo.png" alt="" width={65} height={23} />
         </Link>

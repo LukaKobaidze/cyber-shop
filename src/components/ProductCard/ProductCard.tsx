@@ -30,7 +30,7 @@ export default function ProductCard(props: Props) {
   const wishlistProducts = useWishlistStore((state) => state.products);
   const addToWishlist = useWishlistStore((state) => state.addToWishlist);
   const removeFromWishlist = useWishlistStore(
-    (state) => state.removeFromWishlist
+    (state) => state.removeFromWishlist,
   );
 
   const quantityInCart = cartProducts[id]?.quantity || 0;

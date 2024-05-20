@@ -1,4 +1,6 @@
+import { CheckoutStoreProvider } from "@/stores/checkout";
 import Steps from "./_components/Steps";
+import styles from "./layout.module.scss";
 
 export default function CheckoutLayout({
   children,
@@ -6,9 +8,11 @@ export default function CheckoutLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <Steps />
-      {children}
-    </>
+    <CheckoutStoreProvider>
+      <div className={styles.container}>
+        <Steps />
+        {children}
+      </div>
+    </CheckoutStoreProvider>
   );
 }

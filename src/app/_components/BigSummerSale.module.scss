@@ -1,4 +1,4 @@
-.container{
+.container {
   width: 100%;
   min-height: 448px;
   display: flex;
@@ -8,7 +8,7 @@
   background: linear-gradient(to right, #2e2e2e, black);
   overflow: hidden;
 
-  .contentWrapper{
+  .contentWrapper {
     max-width: 1440px;
     min-height: 448px;
     width: 100%;
@@ -20,92 +20,92 @@
     position: relative;
   }
 
-  h1{
+  h1 {
     font-size: 72px;
     font-weight: 200;
     color: white;
     margin-top: 50px;
     text-align: center;
   }
-  strong{
+  strong {
     font-weight: 500;
   }
-  .paragraph{
+  .paragraph {
     font-size: 16px;
     line-height: 32px;
     width: 80%;
     text-align: center;
   }
 
-  img{
+  img {
     position: absolute;
   }
-  .notebook{
+  .notebook {
     left: 5%;
     top: -2.4rem;
     transform: rotate(-5deg);
   }
-  .purpleIpad{
+  .purpleIpad {
     left: -1rem;
     top: 0;
     z-index: 5;
   }
-  .blueIpad{
+  .blueIpad {
     left: -4rem;
     top: 11rem;
     transform: scaleX(-1);
   }
-  .watch{
+  .watch {
     right: 0rem;
     bottom: 0;
   }
-  .iphone{
+  .iphone {
     right: 0;
     top: 1rem;
     transform: rotate(-30deg);
   }
 
-  .buyNow{
+  .buyNow {
     border-color: white;
     color: white;
     margin-top: 2rem;
 
-    &:hover{
+    &:hover {
       background-color: white;
       color: black;
     }
   }
 }
 
-@media(max-width: 1040px){
-  .container{
-    .notebook{
+@media (max-width: 1040px) {
+  .container {
+    .notebook {
       left: auto;
       top: -8.2rem;
       width: 186px;
       height: 282px;
       transform: rotate(70deg);
     }
-    .purpleIpad{
+    .purpleIpad {
       left: -2rem;
       top: -1rem;
       height: 191px;
       width: 128px;
     }
-    .blueIpad{
+    .blueIpad {
       left: -4rem;
       top: 20rem;
       width: 147px;
       height: 302px;
     }
-    .watch{
+    .watch {
       right: -4rem;
       bottom: -6rem;
       width: 235px;
       height: 261px;
       transform: rotate(10deg);
     }
-    .iphone{
+    .iphone {
       right: 0;
       top: -6rem;
       width: 110px;
@@ -114,9 +114,9 @@
     }
   }
 }
-@media(max-width: 740px){
-  .container{
-    h1{
+@media (max-width: 740px) {
+  .container {
+    h1 {
       font-size: 48px;
       line-height: 72px;
       font-weight: 200;
@@ -124,36 +124,36 @@
     }
   }
 }
-@media(max-width: 500px){
-  .container{
-    .notebook{
+@media (max-width: 500px) {
+  .container {
+    .notebook {
       left: auto;
       top: -5rem;
       width: 86px;
       height: 182px;
       transform: rotate(70deg);
     }
-    .purpleIpad{
+    .purpleIpad {
       left: 0rem;
       top: -1.5rem;
       height: 121px;
       width: 48px;
     }
-    .blueIpad{
+    .blueIpad {
       left: -1.2rem;
       top: 20rem;
       width: 107px;
       height: 262px;
       transform: rotate(-200deg);
     }
-    .watch{
+    .watch {
       right: -4.2rem;
       bottom: -7.2rem;
       width: 205px;
       height: 231px;
       transform: rotate(10deg);
     }
-    .iphone{
+    .iphone {
       right: 0;
       top: -5rem;
       width: 80px;
@@ -162,18 +162,18 @@
     }
   }
 }
-@media(max-width: 376px){
-  .container{
+@media (max-width: 376px) {
+  .container {
     padding-bottom: 50px;
 
-    .blueIpad{
+    .blueIpad {
       left: -1.2rem;
       top: 23rem;
       width: 107px;
       height: 262px;
       transform: rotate(-200deg);
     }
-    .watch{
+    .watch {
       right: -4.2rem;
       bottom: -11.2rem;
       width: 205px;

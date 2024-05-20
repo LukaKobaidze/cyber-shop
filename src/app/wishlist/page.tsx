@@ -6,7 +6,7 @@ interface Props {}
 
 export default function WishlistPage(props: Props) {
   return (
-    <div className={`contentWrapper ${styles.container}`}>
+    <div className={`content-wrapper ${styles.container}`}>
       <WishlistSearchbar />
       <WishlistProducts />
     </div>

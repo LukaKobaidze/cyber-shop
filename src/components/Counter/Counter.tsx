@@ -18,7 +18,7 @@ export default function Counter(props: Props) {
         className={styles.button}
         onClick={() => {
           onValueChange(
-            min === undefined ? value - 1 : Math.max(value - 1, min)
+            min === undefined ? value - 1 : Math.max(value - 1, min),
           );
         }}
       >
@@ -29,7 +29,7 @@ export default function Counter(props: Props) {
         className={styles.button}
         onClick={() => {
           onValueChange(
-            max === undefined ? value + 1 : Math.min(value + 1, max)
+            max === undefined ? value + 1 : Math.min(value + 1, max),
           );
         }}
       >

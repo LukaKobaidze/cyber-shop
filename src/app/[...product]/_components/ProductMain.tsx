@@ -22,7 +22,7 @@ export default function ProductMain(props: Props) {
   const [activeImage, setActiveImage] = useState(0);
 
   return (
-    <div className={`contentWrapper ${styles.container}`}>
+    <div className={`content-wrapper ${styles.container}`}>
       <div className={styles.images}>
         <div className={styles.imagesAside}>
           {images.map((image, imageIndex) => (

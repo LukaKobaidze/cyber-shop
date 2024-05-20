@@ -1,4 +1,4 @@
-.container{
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,9 +6,8 @@
   width: 100%;
   min-height: 48px;
   margin-bottom: 2rem;
-  
 
-  .buttonWrapper{
+  .buttonWrapper {
     width: 100%;
     height: 100%;
     display: flex;
@@ -16,13 +15,13 @@
     justify-content: center;
     position: relative;
 
-    button{
+    button {
       background-color: black;
       border: 1px solid black;
       font-size: 24px;
       height: 24px;
       width: 24px;
-      transition: .2s;
+      transition: 0.2s;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -30,24 +29,23 @@
       color: white;
       padding-bottom: 4px;
       z-index: 5;
-      
 
-      &:hover{
+      &:hover {
         background-color: white;
         color: black;
       }
     }
-    span{
-      display:inline-block;
+    span {
+      display: inline-block;
       height: 1px;
       width: 100%;
       border: 1px dashed #fff;
-      background:
-      linear-gradient(to right, #ffffff, #000000 69%, #ffffff) border-box; 
+      background: linear-gradient(to right, #ffffff, #000000 69%, #ffffff)
+        border-box;
       position: absolute;
     }
   }
-  p{
+  p {
     font-size: 14px;
     line-height: 16px;
     font-weight: 500;

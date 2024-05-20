@@ -1,10 +1,10 @@
 "use client";
-import styles from "./Shipping.module.scss";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState, useEffect } from "react";
 import { IconArrowDown } from "@/icons";
 import Button from "@/components/Button";
+import styles from "./page.module.scss";
 
 interface Props {}
 
@@ -31,11 +31,11 @@ export default function ShippingPage(props: Props) {
   oneYearLater.setFullYear(oneYearLater.getFullYear() + 1);
 
   const [selectedDatePicker, setSelectedDatePicker] = useState<Date | null>(
-    null
+    null,
   );
   const [selectedOption, setSelectedOption] = useState<string>("free");
   const [selectedTime, setSelectedTime] = useState<string>(
-    freeDeliveryDateString
+    freeDeliveryDateString,
   );
 
   const handleDateChange = (date: Date | null) => {
@@ -50,7 +50,7 @@ export default function ShippingPage(props: Props) {
           year: "numeric",
           month: "short",
           day: "2-digit",
-        })
+        }),
       );
     }
   }, [selectedDatePicker]);
@@ -66,8 +66,8 @@ export default function ShippingPage(props: Props) {
         selectedDatePicker.toLocaleDateString("en-US", {
           year: "numeric",
           month: "short",
-          day: "2-digit",
-        })
+          // day: "2-digit",
+        }),
       );
     } else {
       setSelectedTime("");
@@ -76,7 +76,7 @@ export default function ShippingPage(props: Props) {
 
   return (
     <div className={styles.container}>
-      <div className={`contentWrapper ${styles.contentWrapper}`}>
+      <div className={`content-wrapper ${styles.contentWrapper}`}>
         <h3 className={styles.title}>Shipment Method</h3>
 
         <div className={styles.content}>

@@ -13,7 +13,7 @@ export default function PriceFilter(props: Props) {
 
   const handlePriceRangeChange = (
     e: React.ChangeEvent<HTMLInputElement>,
-    field: keyof typeof priceRange
+    field: keyof typeof priceRange,
   ) => {
     const value = e.target.value;
 

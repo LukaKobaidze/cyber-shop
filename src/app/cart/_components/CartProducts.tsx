@@ -32,7 +32,7 @@ export default function CartProducts(props: Props) {
       {(Object.keys(products) as (keyof typeof products)[])
         .sort(
           (a, b) =>
-            products[a].dateAdded.getTime() - products[b].dateAdded.getTime()
+            products[a].dateAdded.getTime() - products[b].dateAdded.getTime(),
         )
         .map((id) => {
           const { slug, title, image, quantity, price, priceDiscount } =
