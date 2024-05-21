@@ -9,6 +9,7 @@ import Tooltip from "@/components/Tooltip";
 import styles from "./CartProducts.module.scss";
 import Link from "next/link";
 import Paragraph from "@/components/Paragraph";
+import { countCartProducts } from "@/utils";
 
 interface Props {}
 
@@ -16,7 +17,7 @@ export default function CartProducts(props: Props) {
   const products = useCartStore((state) => state.products);
   const updateQuantity = useCartStore((state) => state.updateQuantity);
 
-  const productsLength = Object.keys(products).length;
+  const productsLength = countCartProducts(products);
 
   return (
     <div className={styles.container}>

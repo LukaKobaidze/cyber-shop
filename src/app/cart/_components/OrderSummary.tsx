@@ -4,13 +4,14 @@ import Button from "@/components/Button";
 import styles from "./OrderSummary.module.scss";
 import Input from "@/components/Input";
 import { useCartStore } from "@/stores/cart";
+import { countCartProducts } from "@/utils";
 
 interface Props {}
 
 export default function OrderSummary(props: Props) {
   const products = useCartStore((state) => state.products);
 
-  const productsLength = Object.keys(products).length;
+  const productsLength = countCartProducts(products);
 
   return (
     <div className={styles.container}>

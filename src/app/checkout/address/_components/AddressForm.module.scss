@@ -21,65 +21,50 @@
 .heading {
   font-weight: 500;
   font-size: 1.1em;
+  margin-bottom: 2em;
 }
 
-.first {
-  width: 100%;
-  height: fit-content;
+.addressOptions {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
 
-  .firstInput {
-    width: 48%;
+  h4 {
+    font-size: 18px;
+    font-weight: 400;
   }
-  .addressOptions {
-    max-width: 48%;
-    width: 100%;
-    height: 50px;
+
+  .optionBox {
     display: flex;
-    padding-left: 2rem;
     align-items: center;
-    padding-top: 1rem;
+    justify-content: center;
+    margin-left: 1rem;
 
-    h4 {
-      font-size: 18px;
-      font-weight: 400;
+    input {
+      display: none;
     }
+    span {
+      padding: 0.5rem 1rem;
+      border: 1px solid black;
+      margin-left: 0.5rem;
+      cursor: pointer;
+      border-radius: 0.2rem;
+      user-select: none;
+      transition: 0.2s;
+      font-size: 0.8rem;
 
-    .optionBox {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 1rem;
-
-      input {
-        display: none;
+      &:hover {
+        background-color: rgb(61, 61, 61);
+        color: white;
       }
-      span {
-        padding: 0.5rem 1rem;
-        border: 1px solid black;
-        margin-left: 0.5rem;
-        cursor: pointer;
-        border-radius: 0.2rem;
-        user-select: none;
-        transition: 0.2s;
-        font-size: 0.8rem;
 
-        &:hover {
-          background-color: rgb(61, 61, 61);
-          color: white;
-        }
-
-        &.active {
-          background-color: black;
-          color: white;
-        }
+      &.active {
+        background-color: black;
+        color: white;
       }
     }
   }
 }
+
 .second {
   width: 100%;
   height: fit-content;

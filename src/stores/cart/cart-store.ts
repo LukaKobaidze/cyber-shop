@@ -2,7 +2,7 @@ import { objectOmit } from "@/utils";
 import { createStore } from "zustand/vanilla";
 import { createJSONStorage, persist } from "zustand/middleware";
 
-type CartState = {
+export type CartState = {
   products: Record<
     string, // <- unique id
     {

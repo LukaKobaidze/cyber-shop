@@ -17,6 +17,7 @@ import { usePathname } from "next/navigation";
 import { useCartStore } from "@/stores/cart";
 import Badge from "../Badge";
 import { useWishlistStore } from "@/stores/wishlist";
+import { countCartProducts } from "@/utils";
 
 interface Props {}
 
@@ -26,7 +27,7 @@ export default function Header(props: Props) {
   const cartProducts = useCartStore((state) => state.products);
   const wishlistProducts = useWishlistStore((state) => state.products);
 
-  const cartProductsLength = Object.keys(cartProducts).length;
+  const cartProductsLength = countCartProducts(cartProducts);
   const wishlistProductLength = Object.keys(wishlistProducts).length;
 
   return (

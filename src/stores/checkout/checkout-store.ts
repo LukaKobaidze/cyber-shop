@@ -2,7 +2,8 @@ import { createStore } from "zustand";
 
 type CheckoutState = {
   address: {
-    fullName: string;
+    firstName: string;
+    lastName: string;
     addressLine1: string;
     addressLine2?: string;
     country: string;

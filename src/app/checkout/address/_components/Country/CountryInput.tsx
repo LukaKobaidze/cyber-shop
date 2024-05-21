@@ -1,45 +1,46 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fetchCountry } from "./fetchCountry";
 import styles from "./CountryInput.module.scss";
 import Tooltip from "@/components/Tooltip";
 
-const CountryInput: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+  value: string;
+  onValueChange: (value: string) => void;
+}
+
+let countryFetchAbortController: AbortController;
+export default function CountryInput(props: Props) {
+  const { value, onValueChange, ...restProps } = props;
+
   const [countries, setCountries] = useState<string[]>([]);
-  const [menu, setMenu] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      if (searchTerm.trim() !== "") {
-        const fetchedCountries = await fetchCountry(searchTerm);
-        setCountries(fetchedCountries);
+      if (value.trim() !== "") {
+        countryFetchAbortController?.abort();
+        countryFetchAbortController = new AbortController();
 
-        if (fetchedCountries.length === 0) {
-          setMenu(false);
-        }
+        const fetchedCountries = await fetchCountry(
+          value,
+          countryFetchAbortController,
+        );
+        setCountries(fetchedCountries);
       } else {
         setCountries([]);
-        setMenu(false);
       }
     };
     fetchData();
-  }, [searchTerm]);
+  }, [value]);
 
   const handleCountryClick = (countryName: string) => {
-    setSearchTerm(countryName);
+    onValueChange(countryName);
     setCountries([]); // Clear the list of countries
-    setMenu(false);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
-    setSearchTerm(
-      inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase(),
-    );
 
-    if (inputValue.length > 2) {
-      setMenu(true);
-    }
+    onValueChange(inputValue);
   };
 
   return (
@@ -48,10 +49,11 @@ const CountryInput: React.FC = () => {
         <input
           type="text"
           placeholder=" "
-          value={searchTerm}
+          value={value}
           onChange={handleInputChange}
+          {...restProps}
         />
-        <label className={`${searchTerm.length > 0 ? styles.labelFilled : ""}`}>
+        <label className={`${value.length > 0 ? styles.labelFilled : ""}`}>
           Country
         </label>
         <Tooltip position="top" text="Required">
@@ -59,7 +61,7 @@ const CountryInput: React.FC = () => {
         </Tooltip>
       </div>
 
-      {menu && (
+      {!!countries.length && (
         <div className={styles.menu}>
           <ul>
             {countries.slice(0, 7).map(
@@ -76,6 +78,4 @@ const CountryInput: React.FC = () => {
       )}
     </div>
   );
-};
-
-export default CountryInput;
+}
