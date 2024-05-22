@@ -1,6 +1,5 @@
 "use client";
 import styles from "./Input.module.scss";
-import { useState } from "react";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   allowNumbers?: boolean;
@@ -18,8 +17,6 @@ export default function Input(props: Props) {
     value,
     ...restProps
   } = props;
-  const isRequired = restProps.required;
-  const [inputValue, setInputValue] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let { value } = e.target;
@@ -63,8 +60,6 @@ export default function Input(props: Props) {
     //   props.onChange(e);
     // }
   };
-
-  console.log({ value });
 
   return (
     <input

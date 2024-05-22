@@ -5,14 +5,13 @@ const CARD_NUMBER_DEFAULT = "0000 0000 0000 0000";
 
 interface Props {
   cardNumber: string;
+  cardHolder: string;
+  expireDate: string;
+  cvv: string;
 }
 
 export default function CreditCardImage(props: Props) {
-  const { cardNumber } = props;
-
-  const [cardHolder, setCardHolder] = useState("Cardholder");
-  const [expireDate, setExpireDate] = useState("Month/Year");
-  const [cvv, setCvv] = useState("CVV");
+  const { cardNumber, cardHolder, expireDate, cvv } = props;
 
   return (
     <div
@@ -21,10 +20,10 @@ export default function CreditCardImage(props: Props) {
     >
       <div
         className={`${styles.creditHolder} ${
-          cardHolder !== "Cardholder" ? styles.active : ""
+          cardHolder !== "" ? styles.active : ""
         }`}
       >
-        {cardHolder}
+        {cardHolder ? cardHolder : 'Cardhodler'}
       </div>
       <div
         className={styles.cardNumber}
@@ -34,13 +33,13 @@ export default function CreditCardImage(props: Props) {
       </div>
       <div
         className={`${styles.expireDate} ${
-          expireDate !== "Month/Year" ? styles.active : ""
+          expireDate !== "" ? styles.active : ""
         }`}
       >
-        {expireDate}
+        {expireDate ? expireDate : 'Month/Year'}
       </div>
-      <div className={`${styles.cvv} ${cvv !== "CVV" ? styles.active : ""}`}>
-        {cvv}
+      <div className={`${styles.cvv} ${cvv !== "" ? styles.active : ""}`}>
+        {cvv ? cvv : 'CVV'}
       </div>
     </div>
   );
