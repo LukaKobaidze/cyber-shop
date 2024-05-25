@@ -1,10 +1,11 @@
 "use client";
-import AnimationInput from "@/components/AnimationInput";
-import styles from "./AddressForm.module.scss";
+
 import { useState } from "react";
+import AnimationInput from "@/components/AnimationInput";
 import Button from "@/components/Button";
 import CountryInput from "./Country/CountryInput";
 import useInputFields from "@/hooks/useInputFields";
+import styles from "./AddressForm.module.scss";
 
 interface Props {
   showAddressForm: boolean;
