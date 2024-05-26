@@ -1,22 +1,18 @@
-'use client'
-import styles from './Summery.module.scss'
+"use client";
+import styles from "./Summary.module.scss";
 import { productsData } from "@/data/products.data";
-import Image from 'next/image';
+import Image from "next/image";
 
+interface Props {}
 
-interface Props {
-  
-}
-
-export default function Summery(props: Props) {
+export default function Summary(props: Props) {
   return (
-    <div className={styles.summery}>
-      <h3 className={styles.title}>Summery</h3>
+    <div className={styles.summary}>
+      <h3 className={styles.title}>Summary</h3>
 
       <div className={styles.itemContainer}>
-        {productsData.map((product)=> {
-
-          return(
+        {productsData.map((product) => {
+          return (
             <div className={styles.item}>
               <div className={styles.imageTitle}>
                 <Image src={product.image} alt="" width={40} height={40} />
@@ -24,12 +20,14 @@ export default function Summery(props: Props) {
               </div>
               <p className={styles.price}>${product.price}</p>
             </div>
-          )
+          );
         })}
       </div>
       <div className={styles.addressContainer}>
         <p className={styles.addressTitle}>Address</p>
-        <p className={styles.address}>1131 Dusty Townline, Jacksonville, TX 40322</p>
+        <p className={styles.address}>
+          1131 Dusty Townline, Jacksonville, TX 40322
+        </p>
 
         <p className={styles.shipmentTitle}>Shipment Method</p>
         <p className={styles.shipment}>Free</p>
@@ -53,5 +51,5 @@ export default function Summery(props: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

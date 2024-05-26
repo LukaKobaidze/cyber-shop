@@ -1,6 +1,6 @@
 .payment {
   margin-left: 1rem;
-  position: sticky;
+  // position: sticky;
   top: 100px;
   display: flex;
   flex-direction: column;
@@ -8,47 +8,10 @@
   width: 100%;
   min-height: 300px;
   height: fit-content;
+}
 
-  .title {
-    font-size: 20px;
-    font-weight: 700;
-  }
-
-  .paymentNav {
-    display: flex;
-    margin-bottom: 40px;
-
-    span {
-      font-weight: 400;
-      font-size: 14px;
-      font-weight: 500;
-      color: #717171;
-      line-height: 32px;
-      margin-top: 10px;
-      list-style: none;
-      position: relative;
-      cursor: pointer;
-      margin-right: 3.5rem;
-      user-select: none;
-    }
-    span::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0; /* Start with no width */
-      height: 2px;
-      background-color: black;
-      transition: width 0.7s ease; /* Transition width property */
-    }
-    span:hover::after {
-      width: 100%; /* Grow to full width on hover */
-    }
-    .active {
-      color: black;
-    }
-    .active::after {
-      width: 100%;
-    }
-  }
+.title {
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-bottom: 1.2em;
 }

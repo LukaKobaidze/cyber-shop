@@ -1,149 +1,146 @@
-.summery{
+.summary {
   display: flex;
   flex-direction: column;
   max-width: 512px;
   width: 100%;
   border-radius: 10px;
   padding: 32px 24px;
-  border: 1px solid #EBEBEB;
+  border: 1px solid #ebebeb;
   min-height: 400px;
 
-  .title{
+  .title {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 24px;
   }
-  .itemContainer{
+  .itemContainer {
     width: 100%;
     min-height: 100px;
     padding: 10px 5px;
 
-
-    .item{
+    .item {
       width: 100%;
       padding: 16px;
       min-height: 72px;
       display: flex;
       justify-content: space-between;
       border-radius: 13px;
-      background-color: #F6F6F6;
+      background-color: #f6f6f6;
       align-items: center;
       margin-bottom: 1rem;
-      
     }
-    .imageTitle{
+    .imageTitle {
       display: flex;
       align-items: center;
       max-width: 80%;
 
-      p{
+      p {
         margin-left: 1rem;
       }
     }
-    .price{
+    .price {
       font-weight: 700;
     }
   }
-  .addressContainer{
+  .addressContainer {
     display: flex;
     flex-direction: column;
     padding: 10px 5px;
 
-    .addressTitle{
+    .addressTitle {
       font-size: 14px;
       font-weight: 500;
       margin-bottom: 1rem;
       color: #545454;
     }
-    .address{
+    .address {
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
       margin-bottom: 1rem;
     }
-    .shipmentTitle{
+    .shipmentTitle {
       font-size: 14px;
       font-weight: 500;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       color: #545454;
     }
-    .shipment{
+    .shipment {
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
       margin-bottom: 1rem;
     }
   }
-  .priceContainer{
+  .priceContainer {
     display: flex;
     flex-direction: column;
     padding: 10px 5px;
 
-    .subtotal{
+    .subtotal {
       display: flex;
       align-items: center;
       width: 100%;
       justify-content: space-between;
       margin-bottom: 1.5rem;
 
-      p{
+      p {
         font-size: 1rem;
         font-weight: 500;
       }
-      h4{
+      h4 {
         font-size: 1rem;
         font-weight: 500;
       }
     }
-    .tax{
+    .tax {
       display: flex;
       align-items: center;
       width: 100%;
       justify-content: space-between;
       margin-bottom: 1rem;
 
-      p{
-        color:#545454;
+      p {
+        color: #545454;
         font-weight: 400;
         font-size: 1rem;
       }
-      h4{
+      h4 {
         font-size: 1rem;
         font-weight: 500;
       }
     }
-    .shipping{
+    .shipping {
       display: flex;
       align-items: center;
       width: 100%;
       justify-content: space-between;
       margin-bottom: 1.5rem;
 
-      p{
-        color:#545454;
+      p {
+        color: #545454;
         font-weight: 400;
         font-size: 1rem;
       }
-      h4{
+      h4 {
         font-size: 1rem;
         font-weight: 500;
       }
     }
-    .total{
+    .total {
       display: flex;
       align-items: center;
       width: 100%;
       justify-content: space-between;
 
-      p{
+      p {
         font-size: 1rem;
         font-weight: 500;
       }
-      h4{
+      h4 {
         font-size: 1rem;
         font-weight: 600;
       }
     }
   }
-  
 }

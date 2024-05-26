@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  border-radius: 11px;
+  border: 1px solid #d1d1d8;
+  color: #a2a3b1;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: border-color 125ms;
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &.checked {
+    border-color: #000;
+    color: #000;
+  }
+}
+
+.input {
+  width: 24px;
+  height: 24px;
+  accent-color: black;
+  margin-right: 1em;
+}

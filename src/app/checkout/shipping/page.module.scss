@@ -11,87 +11,37 @@
   font-weight: 600;
   font-size: 20px;
 }
-.content {
+
+.shipmentMethodsWrapper {
+  margin-top: 2em;
+}
+
+.inputRadioContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  min-height: 200px;
-  margin-top: 2rem;
+
+  &Left {
+    display: flex;
+    align-items: center;
+  }
+
+  &Label {
+    font-weight: 500;
+    margin-right: 1em;
+  }
 }
 
 .shippingOption {
-  display: flex;
-  justify-content: space-between;
-  padding: 24px;
-  border-radius: 11px;
-  border: 1px solid #d1d1d8;
   margin-bottom: 1rem;
-  justify-content: space-between;
-  cursor: pointer;
-
-  .left {
-    display: flex;
-    align-items: center;
-
-    input[type="radio"] {
-      width: 24px;
-      height: 24px;
-      accent-color: black;
-    }
-
-    h4 {
-      font-size: 16px;
-      color: #a2a3b1;
-      font-weight: 500;
-      margin-left: 1rem;
-    }
-    p {
-      font-size: 16px;
-      font-weight: 400;
-      margin-left: 1rem;
-      color: #a2a3b1;
-    }
-  }
-  .right {
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    p {
-      font-size: 16px;
-      font-weight: 500;
-      display: flex;
-      margin-right: 4px;
-      position: relative;
-      color: #a2a3b1;
-    }
-    svg {
-      position: absolute;
-      right: 0.2rem;
-      pointer-events: none;
-      stroke: #a2a3b1 !important;
-    }
-  }
 }
-.shippingOption.selected {
-  border: 1px solid black;
 
-  p {
-    color: black;
-  }
-  h4 {
-    color: black;
-  }
-
-  svg {
-    color: black;
-    stroke: black !important;
-  }
-
-  .right {
-    p {
-      color: black;
-    }
-  }
+.datePickerWrapper {
+  display: flex;
+  align-items: center;
 }
+
 .bottomContainer {
   display: flex;
   align-items: center;

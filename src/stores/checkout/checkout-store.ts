@@ -16,10 +16,8 @@ type CheckoutState = {
     scheduleDate?: Date;
   } | null;
   payment: {
-    cardholder: string;
+    id: string;
     cardNumberLastFour: string;
-    expiration: string;
-    cvv: string;
   } | null;
 };
 
@@ -44,6 +42,8 @@ export const createCheckoutStore = (
     ...argInitState,
     submitAddress: () => {},
     submitShipping: () => {},
-    submitPayment: () => {},
+    submitPayment: (payment) => {
+      return set({ payment });
+    },
   }));
 };

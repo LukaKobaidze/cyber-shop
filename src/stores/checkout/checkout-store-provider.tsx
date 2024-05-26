@@ -2,8 +2,7 @@
 
 import { createContext, useContext, useRef } from "react";
 import { StoreApi, useStore } from "zustand";
-import { CheckoutStore } from "./checkout-store";
-import { createWishlistStore } from "../wishlist/wishlist-store";
+import { CheckoutStore, createCheckoutStore } from "./checkout-store";
 
 const CheckoutStoreContext = createContext<StoreApi<CheckoutStore> | null>(
   null,
@@ -15,7 +14,7 @@ export const CheckoutStoreProvider = ({ children }: ProviderProps) => {
   const storeRef = useRef<StoreApi<CheckoutStore>>();
 
   if (!storeRef.current) {
-    storeRef.current = createWishlistStore();
+    storeRef.current = createCheckoutStore();
   }
 
   return (

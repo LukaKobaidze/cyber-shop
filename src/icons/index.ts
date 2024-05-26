@@ -27,4 +27,4 @@ export { default as IconInstagram } from "./instagram.svg";
 export { default as IconLocation } from "./location.svg";
 export { default as IconPayment } from "./payment.svg";
 export { default as IconShipping } from "./shipping.svg";
-export { default as IconArrowDown } from "./arrowDown.svg";
+export { default as IconArrowDown } from "./arrow-down.svg";

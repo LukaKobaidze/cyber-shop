@@ -5,10 +5,11 @@ import { useState, useEffect } from "react";
 import { IconArrowDown } from "@/icons";
 import Button from "@/components/Button";
 import styles from "./page.module.scss";
+import InputRadio from "@/components/InputRadio";
 
-interface Props {}
+type ShipmentMethodType = "free" | "asap" | "schedule";
 
-export default function ShippingPage(props: Props) {
+export default function ShippingPage() {
   // Calculate the delivery date for free
   const today = new Date();
   const threeWeeksLater = new Date(today.getTime() + 21 * 24 * 60 * 60 * 1000);
@@ -33,7 +34,8 @@ export default function ShippingPage(props: Props) {
   const [selectedDatePicker, setSelectedDatePicker] = useState<Date | null>(
     null,
   );
-  const [selectedOption, setSelectedOption] = useState<string>("free");
+  const [shipmentMethod, setShipmentMethod] =
+    useState<ShipmentMethodType>("free");
   const [selectedTime, setSelectedTime] = useState<string>(
     freeDeliveryDateString,
   );
@@ -44,7 +46,7 @@ export default function ShippingPage(props: Props) {
 
   // storing the time inside selected time based on the chooosen option
   useEffect(() => {
-    if (selectedOption === "schedule" && selectedDatePicker) {
+    if (shipmentMethod === "schedule" && selectedDatePicker) {
       setSelectedTime(
         selectedDatePicker.toLocaleDateString("en-US", {
           year: "numeric",
@@ -55,18 +57,20 @@ export default function ShippingPage(props: Props) {
     }
   }, [selectedDatePicker]);
 
-  const handleOptionClick = (option: string) => {
-    setSelectedOption(option);
-    if (option === "free") {
+  const handleInputRadioChange = (e: React.ChangeEvent<HTMLFormElement>) => {
+    const shipmentMethod: ShipmentMethodType = e.target.value;
+
+    setShipmentMethod(shipmentMethod);
+
+    if (shipmentMethod === "free") {
       setSelectedTime(freeDeliveryDateString);
-    } else if (option === "expedited") {
+    } else if (shipmentMethod === "asap") {
       setSelectedTime(soonDeliveryDateString);
-    } else if (option === "schedule" && selectedDatePicker) {
+    } else if (shipmentMethod === "schedule" && selectedDatePicker) {
       setSelectedTime(
         selectedDatePicker.toLocaleDateString("en-US", {
           year: "numeric",
           month: "short",
-          // day: "2-digit",
         }),
       );
     } else {
@@ -79,78 +83,69 @@ export default function ShippingPage(props: Props) {
       <div className={`content-wrapper ${styles.contentWrapper}`}>
         <h3 className={styles.title}>Shipment Method</h3>
 
-        <div className={styles.content}>
-          <div
-            className={`${styles.shippingOption} ${
-              selectedOption === "free" && styles.selected
-            }`}
-            onClick={() => handleOptionClick("free")}
+        <form
+          className={styles.shipmentMethodsWrapper}
+          onChange={handleInputRadioChange}
+        >
+          <InputRadio
+            classNameContainer={styles.shippingOption}
+            id="shipping-free"
+            checked={shipmentMethod === "free"}
+            value="free"
           >
-            <div className={styles.left}>
-              <input
-                type="radio"
-                name="shipping"
-                checked={selectedOption === "free"}
-                readOnly
-              />
-              <h4>Free</h4>
-              <p>Regular shipment</p>
-            </div>
-            <div className={styles.right}>
+            <div className={styles.inputRadioContent}>
+              <div className={styles.inputRadioContentLeft}>
+                <p className={styles.inputRadioContentLabel}>Free</p>
+                <p className={styles.inputRadioContentDescription}>
+                  Regular shipment
+                </p>
+              </div>
               <p>{freeDeliveryDateString}</p>
             </div>
-          </div>
-
-          <div
-            className={`${styles.shippingOption} ${
-              selectedOption === "expedited" && styles.selected
-            }`}
-            onClick={() => handleOptionClick("expedited")}
+          </InputRadio>
+          <InputRadio
+            classNameContainer={styles.shippingOption}
+            id="shipping-asap"
+            checked={shipmentMethod === "asap"}
+            value="asap"
           >
-            <div className={styles.left}>
-              <input
-                type="radio"
-                name="shipping"
-                checked={selectedOption === "expedited"}
-                readOnly
-              />
-              <h4>$8.50</h4>
-              <p>Get your delivery as soon as possible</p>
-            </div>
-            <div className={styles.right}>
+            <div className={styles.inputRadioContent}>
+              <div className={styles.inputRadioContentLeft}>
+                <p className={styles.inputRadioContentLabel}>$8.50</p>
+                <p className={styles.inputRadioContentDescription}>
+                  Get your delivery as soon as possible
+                </p>
+              </div>
               <p>{soonDeliveryDateString}</p>
             </div>
-          </div>
-
-          <div
-            className={`${styles.shippingOption} ${
-              selectedOption === "schedule" && styles.selected
-            }`}
-            onClick={() => handleOptionClick("schedule")}
+          </InputRadio>
+          <InputRadio
+            classNameContainer={styles.shippingOption}
+            id="shipping-schedule"
+            checked={shipmentMethod === "schedule"}
+            value="schedule"
           >
-            <div className={styles.left}>
-              <input
-                type="radio"
-                name="shipping"
-                checked={selectedOption === "schedule"}
-                readOnly
-              />
-              <h4>Schedule</h4>
-              <p>Pick a date when you want to get your delivery</p>
+            <div className={styles.inputRadioContent}>
+              <div className={styles.inputRadioContentLeft}>
+                <p className={styles.inputRadioContentLabel}>Schedule</p>
+                <p className={styles.inputRadioContentDescription}>
+                  Pick a date when you want to get your delivery
+                </p>
+              </div>
+              <div className={styles.datePickerWrapper}>
+                <DatePicker
+                  selected={selectedDatePicker}
+                  onChange={handleDateChange}
+                  minDate={today}
+                  maxDate={oneYearLater}
+                  dateFormat="MMMM dd, yyyy"
+                  placeholderText="Select Date"
+                />
+                <IconArrowDown />
+              </div>
             </div>
-            <div className={styles.right}>
-              <DatePicker
-                selected={selectedDatePicker}
-                onChange={handleDateChange}
-                minDate={today}
-                maxDate={oneYearLater}
-                dateFormat="MMMM dd, yyyy"
-                placeholderText="Select Date"
-              />
-              <IconArrowDown />
-            </div>
-          </div>
-        </div>
+          </InputRadio>
+        </form>
         <div className={styles.bottomContainer}>
           <p className={styles.selectedTime}>{selectedTime}</p>
           <div className={styles.buttonBox}>
