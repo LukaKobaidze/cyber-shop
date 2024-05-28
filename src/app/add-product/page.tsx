@@ -95,13 +95,13 @@ export default function AddProductPage() {
         placeholder="Title"
         value={fields.title}
         onChange={(e) => onFieldUpdate(e.target.value, "title")}
-        required={false}
+        required
       />
       <AnimationInput
         placeholder="Price"
         value={fields.price}
         onChange={(e) => onFieldUpdate(e.target.value, "price")}
-        required={false}
+        required
       />
       <AnimationInput
         placeholder="Price Discount (%)"
@@ -112,7 +112,7 @@ export default function AddProductPage() {
         placeholder="Description"
         value={fields.description}
         onChange={(e) => onFieldUpdate(e.target.value, "description")}
-        required={false}
+        required
       />
       <label htmlFor="category" className={styles.categoryLabel}>
         Category
@@ -133,7 +133,7 @@ export default function AddProductPage() {
         placeholder="Brand (Iphone, Samsung, more...)"
         value={fields.brand}
         onChange={(e) => onFieldUpdate(e.target.value, "brand")}
-        required={false}
+        required
       />
       <p className={styles.imagesTitle}>Images</p>
       <Paragraph className={styles.imagesParagraph}>
