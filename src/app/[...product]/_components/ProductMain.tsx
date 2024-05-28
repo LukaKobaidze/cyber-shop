@@ -60,20 +60,6 @@ export default function ProductMain(props: Props) {
           priceDiscount={priceDiscount}
           className={styles.infoPrice}
         />
-        <div className={styles.infoVariants}>
-          <a href="/" className={styles.infoVariantsItem}>
-            128GB
-          </a>
-          <a href="/" className={styles.infoVariantsItem}>
-            256GB
-          </a>
-          <a href="/" className={styles.infoVariantsItem}>
-            512GB
-          </a>
-          <a href="/" className={`${styles.infoVariantsItem} ${styles.active}`}>
-            1TB
-          </a>
-        </div>
         <Paragraph className={styles.infoParagraph}>{description}</Paragraph>
         <div className={styles.buttonsWrapper}>
           <Button className={styles.addToCart}>Add to Cart</Button>

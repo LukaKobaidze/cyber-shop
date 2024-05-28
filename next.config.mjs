@@ -27,6 +27,14 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cyber-shop-img.s3.eu-north-1.amazonaws.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

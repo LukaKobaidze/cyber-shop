@@ -149,6 +149,7 @@ export default function AddProductPage() {
               {file.name} ({file.size} bytes)
             </span>
             <button
+              type="button"
               className={styles.imageAction}
               onClick={() =>
                 setImages((state) => [
@@ -162,7 +163,10 @@ export default function AddProductPage() {
           </li>
         ))}
       </ol>
-      <button {...getRootProps({ className: styles.uploadImage })}>
+      <button
+        type="button"
+        {...getRootProps({ className: styles.uploadImage })}
+      >
         <input {...getInputProps()} />
         <span>Drag & Drop or Click here to upload an image</span>
       </button>

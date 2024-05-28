@@ -14,9 +14,8 @@ export default function RelatedProducts(props: Props) {
           <ProductCard
             id={product.id}
             slug={product.slug}
-            image={product.image}
+            images={[product.image]}
             imageSizes="20vw"
-            wishlist={false}
             title={product.title}
             price={product.price}
             priceDiscount={product.priceDiscount}

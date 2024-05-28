@@ -9,13 +9,17 @@
 
 .imageWrapper {
   position: relative;
-  display: block;
-  width: 59.701492537%;
-  padding-bottom: 59.701492537%;
+  width: 100%;
+  padding-bottom: 64%;
   margin-bottom: 1em;
 }
 
 img.image {
+  width: auto !important;
+  object-fit: cover;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
 }
 
 .title {

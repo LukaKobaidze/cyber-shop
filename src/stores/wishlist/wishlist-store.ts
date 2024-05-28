@@ -6,22 +6,20 @@ type WishlistState = {
   products: Record<
     string, // <- unique id
     {
-      slug: string;
-      image: string;
-      title: string;
-      price: number;
-      priceDiscount?: number;
       dateAdded: Date;
+      data?: {
+        slug: string;
+        image: string;
+        title: string;
+        price: number;
+        priceDiscount?: number;
+      };
     }
   >;
 };
 
 type WishlistActions = {
-  addToWishlist: (
-    product: Omit<WishlistState["products"][number], "dateAdded"> & {
-      id: string;
-    },
-  ) => void;
+  addToWishlist: (id: string) => void;
   removeFromWishlist: (id: string) => void;
 };
 
@@ -39,14 +37,12 @@ export const createWishlistStore = (
       (set) => ({
         ...argInitState,
 
-        addToWishlist: (product) => {
-          const { id, ...productData } = product;
-
+        addToWishlist: (id) => {
           return set((state) => ({
             ...state,
             products: {
               ...state.products,
-              [id]: { ...productData, dateAdded: new Date() },
+              [id]: { dateAdded: new Date() },
             },
           }));
         },

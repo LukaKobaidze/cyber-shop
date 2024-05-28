@@ -6,21 +6,21 @@ export type CartState = {
   products: Record<
     string, // <- unique id
     {
-      slug: string;
-      image: string;
-      title: string;
-      quantity: number;
-      price: number;
-      priceDiscount?: number;
+      data?: {
+        slug: string;
+        image: string;
+        title: string;
+        price: number;
+        priceDiscount?: number;
+      };
       dateAdded: Date;
+      quantity: number;
     }
   >;
 };
 
 type CartActions = {
-  addToCart: (
-    product: Omit<CartState["products"][number], "dateAdded"> & { id: string },
-  ) => void;
+  addToCart: (id: string, quantity?: number) => void;
   updateQuantity: (id: string, quantity: number) => void;
   removeFromCart: (id: string) => void;
 };
@@ -36,18 +36,15 @@ export const createCartStore = (argInitState: CartState = initialState) => {
     persist(
       (set) => ({
         ...argInitState,
-        addToCart: (product) => {
-          const { id, ...productData } = product;
-
+        addToCart: (id, quantity = 1) => {
           return set((state) => ({
             ...state,
             products: {
               ...state.products,
               [id]: {
-                ...productData,
-                dateAdded: state.products[id]?.dateAdded || new Date(),
-                quantity:
-                  (state.products[id]?.quantity || 0) + productData.quantity,
+                ...state.products[id],
+                dateAdded: state.products[id].dateAdded || new Date(),
+                quantity: (state.products[id]?.quantity || 0) + quantity,
               },
             },
           }));

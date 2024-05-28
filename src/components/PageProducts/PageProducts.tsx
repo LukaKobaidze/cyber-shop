@@ -1,13 +1,12 @@
-import { ProductType } from "@/data/products.data";
 import Pagination from "../Pagination/Pagination";
-import ProductCard from "../ProductCard";
+import ProductCard, { ProductCardProps } from "../ProductCard";
 import ProductsFilter from "../ProductsFilter";
 import ProductsGrid from "../ProductsGrid";
 import styles from "./PageProducts.module.scss";
 import Select from "../Select";
 
 interface Props {
-  products: ProductType[];
+  products: Omit<ProductCardProps, "imageSizes">[];
   totalProducts: number;
   currentPage: number;
   totalPages: number;
@@ -50,10 +49,10 @@ export default function PageProducts(props: Props) {
               id={product.id}
               slug={product.slug}
               title={product.title}
-              image={product.image}
+              images={product.images}
               price={product.price}
               priceDiscount={product.priceDiscount}
-              imageSizes="20vw"
+              imageSizes="100vw"
             />
           ))}
         </ProductsGrid>

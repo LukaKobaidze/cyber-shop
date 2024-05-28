@@ -10,18 +10,18 @@ import Price from "../Price";
 import { useCartStore } from "@/stores/cart";
 import { useWishlistStore } from "@/stores/wishlist";
 
-interface Props {
+export interface ProductCardProps {
   id: string;
   slug: string;
-  image: string;
+  images: string[];
   title: string;
   price: number;
   imageSizes: string;
   priceDiscount?: number;
 }
 
-export default function ProductCard(props: Props) {
-  const { id, slug, image, title, price, imageSizes, priceDiscount } = props;
+export default function ProductCard(props: ProductCardProps) {
+  const { id, slug, images, title, price, imageSizes, priceDiscount } = props;
 
   const cartProducts = useCartStore((state) => state.products);
   const addToCart = useCartStore((state) => state.addToCart);
@@ -44,7 +44,7 @@ export default function ProductCard(props: Props) {
     <div className={`card ${styles.container}`}>
       <Link href={href} className={styles.imageWrapper} tabIndex={-1}>
         <Image
-          src={image}
+          src={images[0]}
           fill
           sizes={imageSizes}
           alt={"Image of " + title}
@@ -61,17 +61,7 @@ export default function ProductCard(props: Props) {
       />
       <Button
         className={styles.addToCartButton}
-        onClick={() =>
-          addToCart({
-            id,
-            slug,
-            image,
-            title,
-            price,
-            priceDiscount,
-            quantity: 1,
-          })
-        }
+        onClick={() => addToCart(id)}
       >
         Add to Cart
       </Button>
@@ -94,9 +84,7 @@ export default function ProductCard(props: Props) {
             isInWishlist ? styles.active : ""
           }`}
           onClick={() =>
-            isInWishlist
-              ? removeFromWishlist(id)
-              : addToWishlist({ id, image, price, priceDiscount, slug, title })
+            isInWishlist ? removeFromWishlist(id) : addToWishlist(id)
           }
         >
           {isInWishlist ? (

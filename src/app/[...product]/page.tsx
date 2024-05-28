@@ -1,10 +1,10 @@
-import { getProductPageData } from "@/data/products.data";
-import styles from "./page.module.scss";
 import PageRoute from "@/components/PageRoute";
 import ProductMain from "./_components/ProductMain";
 import ProductDetails from "./_components/ProductDetails";
 import ProductReviews from "./_components/ProductReviews";
 import RelatedProducts from "./_components/RelatedProducts";
+import { getProductById } from "@/backend/lib/products";
+import Paragraph from "@/components/Paragraph";
 
 interface Props {
   params: {
@@ -12,10 +12,14 @@ interface Props {
   };
 }
 
-export default function ProductPage({ params }: Props) {
+export default async function ProductPage({ params }: Props) {
   const [slug, id] = params.product;
 
-  const data = getProductPageData(id);
+  const data = await getProductById(id);
+
+  if (!data) {
+    return <Paragraph>Loading...</Paragraph>;
+  }
 
   return (
     <div>
@@ -29,7 +33,6 @@ export default function ProductPage({ params }: Props) {
         price={data.price}
         priceDiscount={data.priceDiscount}
       />
-      <ProductDetails description={data.description} details={data.details} />
       <ProductReviews />
       <RelatedProducts />
     </div>

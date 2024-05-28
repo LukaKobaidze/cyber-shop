@@ -33,12 +33,10 @@ export default function Products(props: Props) {
           <ProductCard
             id={product.id}
             slug={product.slug}
-            image={product.image}
+            images={[product.image]}
             title={product.title}
             price={product.price}
-            wishlist={false}
             imageSizes="10vw"
-            onToggleWishlist={() => {}}
           />
         ))}
       </ProductsGrid>

@@ -9,16 +9,22 @@
   height: 516px;
   width: 50%;
   display: flex;
+  margin-right: 3em;
 
   &Aside {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 20%;
+    margin-right: 3em;
 
     &Button {
       flex-basis: 100%;
       position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: 1.5em;
+      }
 
       & > img {
         transition: opacity 125ms;
@@ -88,10 +94,12 @@
 }
 
 .image {
-  height: auto !important;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
   top: 50% !important;
-  transform: translateY(-50%);
+  left: 50% !important;
+  transform: translate(-50%, -50%);
 }
 
 .quantity {

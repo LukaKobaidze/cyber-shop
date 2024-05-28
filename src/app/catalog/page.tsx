@@ -1,19 +1,8 @@
 import PageRoute from "@/components/PageRoute";
 import Categories from "@/components/Categories";
-import { oneProduct } from "@/data/products.data";
 import styles from "./page.module.scss";
 import PageProducts from "@/components/PageProducts/PageProducts";
-
-const fakeProducts = Array.from({ length: 85 }).map(() => oneProduct);
-const totalAmount = fakeProducts.length;
-const pageLimit = 9;
-const totalPages = Math.ceil(totalAmount / pageLimit);
-const getProducts = (currentPage: number) => {
-  return fakeProducts.slice(
-    pageLimit * (currentPage - 1),
-    pageLimit * (currentPage - 1) + pageLimit,
-  );
-};
+import { getProducts } from "@/backend/lib/products";
 
 interface Props {
   searchParams?: {
@@ -22,8 +11,14 @@ interface Props {
   };
 }
 
-export default function CatalogPage({ searchParams }: Props) {
-  const currentPage = Number(searchParams?.page) || 1;
+export default async function CatalogPage({ searchParams }: Props) {
+  const page = Number(searchParams?.page) || 1;
+  const limit = 12;
+
+  const { products, totalProducts } = await getProducts({
+    page: Number(searchParams?.page),
+    limit,
+  });
 
   return (
     <div className={`content-wrapper ${styles.container}`}>
@@ -39,10 +34,10 @@ export default function CatalogPage({ searchParams }: Props) {
         ]}
       />
       <PageProducts
-        products={getProducts(currentPage)}
-        totalProducts={fakeProducts.length}
-        currentPage={currentPage}
-        totalPages={totalPages}
+        products={products}
+        totalProducts={totalProducts}
+        currentPage={page}
+        totalPages={Math.ceil(totalProducts / limit)}
         sortOptions={[
           { label: "Relevance", value: "relevance" },
           { label: "Price (Low to High)", value: "price-increasing" },
