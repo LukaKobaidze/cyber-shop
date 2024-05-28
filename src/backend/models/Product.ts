@@ -4,7 +4,7 @@ export interface ProductProperties {
   title: string;
   price: number;
   priceDiscount?: number;
-  description: number;
+  description: string;
   category: string;
   brand: string;
   images: string[];
@@ -26,18 +26,17 @@ const productSchema = new Schema({
   category: { type: String, required: true },
   brand: { type: String, required: true },
   images: [{ type: String, required: true }],
-  reviews: [{
-    username: { type: String, required: true },
-    rating: { type: String, required: true },
-    comment: { type: String },
-    dateAdded: { type: Date, required: true },
-  }],
+  reviews: [
+    {
+      username: { type: String, required: true },
+      rating: { type: String, required: true },
+      comment: { type: String },
+      dateAdded: { type: Date, required: true },
+    },
+  ],
 });
 
-const Product = mongoose.model<ProductInterface>(
-  "Product",
-  productSchema,
-  "products",
-);
+productSchema.pre("save", async function () {});
 
-export default Product;
+export default mongoose.models.Product ||
+  mongoose.model<ProductInterface>("Product", productSchema, "products");

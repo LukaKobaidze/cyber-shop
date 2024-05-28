@@ -59,15 +59,18 @@
 .imageAction {
   margin-left: 0.5em;
   text-decoration: underline;
-  color: rgba(0, 0, 0, .6);
-  
+  color: rgba(0, 0, 0, 0.6);
+
   &:hover {
     color: rgba(0, 0, 0, 1);
   }
 }
 
 .submitButton {
+  display: block;
   margin-top: 3em;
+  margin-right: 0.5em;
   font-weight: 500;
   font-size: 1.1em;
+  margin-bottom: 0.75em;
 }

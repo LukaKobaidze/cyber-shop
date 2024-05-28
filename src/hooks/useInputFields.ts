@@ -1,17 +1,9 @@
 import { useState } from "react";
 
-export default function useInputFields<T extends ReadonlyArray<string>[number]>(
-  fieldsArr: ReadonlyArray<T>,
+export default function useInputFields<T extends keyof Record<string, string>>(
+  argFields: Record<T, string>,
 ) {
-  const [fields, setFields] = useState<Record<T, string>>(() => {
-    const obj: any = {};
-
-    fieldsArr.forEach((field) => {
-      obj[field] = "";
-    });
-
-    return obj;
-  });
+  const [fields, setFields] = useState<Record<T, string>>(argFields);
   const [error, setError] = useState<{
     field?: T;
     message: string;
@@ -23,7 +15,7 @@ export default function useInputFields<T extends ReadonlyArray<string>[number]>(
   };
 
   const validateEmpty = (fieldsToValidate?: T[]) => {
-    (fieldsToValidate || fieldsArr).forEach((key) => {
+    ((fieldsToValidate || Object.keys(fields)) as T[]).forEach((key) => {
       if (fields[key].trim().length === 0) {
         setError({ field: key, message: "Required field is empty." });
         throw new Error();

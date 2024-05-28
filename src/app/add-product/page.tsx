@@ -3,7 +3,7 @@ import AnimationInput from "@/components/AnimationInput";
 import Paragraph from "@/components/Paragraph";
 import useInputFields from "@/hooks/useInputFields";
 import styles from "./page.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "@/components/Button";
 import Select from "@/components/Select";
 import { hyphenCaseToTitleCase } from "@/utils";
@@ -34,38 +34,52 @@ export default function AddProductPage() {
       ]);
     },
   });
-  const { fields } = useInputFields([
-    "title",
-    "price",
-    "priceDiscount",
-    "description",
-    "category",
-    "brand",
-  ]);
+  const { fields, onFieldUpdate } = useInputFields({
+    title: "",
+    price: "",
+    priceDiscount: "",
+    description: "",
+    category: categories[0],
+    brand: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (images.length === 0) return;
 
-    const formData = new FormData();
+    const body = new FormData();
 
     images.forEach((img) => {
-      formData.append("images", img);
+      body.append("images", img, img.name);
     });
-    formData.set("title", fields.title);
-    formData.set("price", fields.price);
-    formData.set("priceDiscount", fields.priceDiscount);
-    formData.set("description", fields.description);
-    formData.set("category", fields.category);
-    formData.set("brand", fields.brand);
+    body.set("title", fields.title);
+    body.set("price", fields.price);
+    body.set("priceDiscount", fields.priceDiscount);
+    body.set("description", fields.description);
+    body.set("category", fields.category);
+    body.set("brand", fields.brand);
 
+    setSubmitMessage("");
+    setIsLoading(true);
     fetch("/api/add-product", {
       method: "POST",
-      body: formData,
+      body,
     })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setSubmitMessage(data.message);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -80,33 +94,45 @@ export default function AddProductPage() {
       <AnimationInput
         placeholder="Title"
         value={fields.title}
+        onChange={(e) => onFieldUpdate(e.target.value, "title")}
         required={false}
       />
       <AnimationInput
         placeholder="Price"
         value={fields.price}
+        onChange={(e) => onFieldUpdate(e.target.value, "price")}
         required={false}
       />
       <AnimationInput
         placeholder="Price Discount (%)"
         value={fields.priceDiscount}
+        onChange={(e) => onFieldUpdate(e.target.value, "priceDiscount")}
       />
       <AnimationInput
         placeholder="Description"
         value={fields.description}
+        onChange={(e) => onFieldUpdate(e.target.value, "description")}
         required={false}
       />
       <label htmlFor="category" className={styles.categoryLabel}>
         Category
       </label>
-      <Select id="category" classNameContainer={styles.select}>
+      <Select
+        id="category"
+        classNameContainer={styles.select}
+        value={fields.category}
+        onChange={(e) => onFieldUpdate(e.target.value, "category")}
+      >
         {categories.map((category) => (
-          <option value={category}>{hyphenCaseToTitleCase(category)}</option>
+          <option value={category} selected={fields.category === category}>
+            {hyphenCaseToTitleCase(category)}
+          </option>
         ))}
       </Select>
       <AnimationInput
         placeholder="Brand (Iphone, Samsung, more...)"
         value={fields.brand}
+        onChange={(e) => onFieldUpdate(e.target.value, "brand")}
         required={false}
       />
       <p className={styles.imagesTitle}>Images</p>
@@ -140,9 +166,14 @@ export default function AddProductPage() {
         <input {...getInputProps()} />
         <span>Drag & Drop or Click here to upload an image</span>
       </button>
-      <Button type="submit" className={styles.submitButton}>
+      <Button
+        type="submit"
+        className={styles.submitButton}
+        disabled={isLoading}
+      >
         Confirm & Add Product
       </Button>
+      <p>{isLoading ? "Sending..." : submitMessage}</p>
     </form>
   );
 }
