@@ -3,7 +3,6 @@ import Tooltip from "../Tooltip";
 import { InputHTMLAttributes } from "react";
 
 interface AnimationInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  type: string;
   maxLength?: number;
 }
 

@@ -1,5 +1,5 @@
 import HeroMain from "./_components/HeroMain";
-import Categories from "./_components/BrowseByCategory";
+import BrowseByCategory from "./_components/BrowseByCategory";
 import Products from "./_components/Products";
 import Brands from "./_components/Brands";
 import Discounts from "./_components/Discounts";
@@ -11,7 +11,7 @@ export default function HomePage() {
     <>
       <HeroMain />
       <HeroGrid />
-      <Categories />
+      <BrowseByCategory />
       <Products />
       <Brands />
       <Discounts />

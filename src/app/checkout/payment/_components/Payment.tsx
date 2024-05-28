@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Payment.module.scss";
 import AddCreditCard from "./AddCreditCard";
 import { CheckoutStore } from "@/stores/checkout/checkout-store";
@@ -18,8 +18,6 @@ export default function Payment(props: Props) {
   const handleCreditCardChange = (e: React.ChangeEvent<HTMLFormElement>) => {
     const paymentId = e.target.value;
 
-    console.log({ paymentId });
-
     submitPayment({ id: paymentId, ...creditCardList[paymentId] });
   };
 
@@ -30,8 +28,6 @@ export default function Payment(props: Props) {
     setCreditCardList((state) => ({ ...state, [id]: { cardNumberLastFour } }));
     submitPayment({ id, cardNumberLastFour });
   };
-
-  console.log(payment);
 
   return (
     <div className={styles.payment}>

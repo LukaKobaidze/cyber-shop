@@ -1,0 +1,73 @@
+.container {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.images {
+  background-color: rgba(0, 0, 0, 0.075);
+  padding: 1em;
+  margin-top: 0.5em;
+  border-radius: 0.5em;
+}
+
+.imagesTitle {
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.categoryLabel {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 4px;
+}
+.select {
+  width: 100%;
+}
+
+.imagesParagraph {
+  margin-bottom: 1em;
+}
+
+.uploadImage {
+  display: block;
+  border: 1px dotted #000;
+  padding: 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  width: 100%;
+  min-height: 100px;
+  margin-top: 1em;
+  transition: background-color 125ms;
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+}
+
+.imagesListItem {
+  display: flex;
+  align-items: center;
+}
+
+.imagePreview {
+  max-height: 50px;
+  margin-right: 1em;
+}
+
+.imageAction {
+  margin-left: 0.5em;
+  text-decoration: underline;
+  color: rgba(0, 0, 0, .6);
+  
+  &:hover {
+    color: rgba(0, 0, 0, 1);
+  }
+}
+
+.submitButton {
+  margin-top: 3em;
+  font-weight: 500;
+  font-size: 1.1em;
+}
