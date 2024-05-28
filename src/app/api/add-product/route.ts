@@ -37,6 +37,13 @@ export async function POST(req: Request) {
 
     const product = new Product({
       title: data.get("title"),
+      slug: data
+        .get("title")
+        ?.toString()
+        .split(" ")
+        .slice(0, 5)
+        .join("-")
+        .toLowerCase(),
       price: Number(data.get("price")),
       priceDiscount: Number(data.get("priceDiscount")),
       description: data.get("description"),
