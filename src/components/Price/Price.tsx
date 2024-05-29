@@ -16,7 +16,7 @@ export default function Price(props: Props) {
     <div className={`${styles.priceWrapper} ${className}`} {...restProps}>
       <span className={styles.price}>${renderPrice}</span>
 
-      {priceDiscount && (
+      {!!priceDiscount && (
         <span className={styles.priceBeforeSale}>${price}</span>
       )}
     </div>
